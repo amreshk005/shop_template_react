@@ -1,10 +1,14 @@
-import React from "react";
-import "./App.css";
+import React, {Component} from "react";
+import Layout from "./components/Layout/Layout";
 
-function App() {
-  return (
-   
-  );
+class App extends Component {
+  return() {
+    <div>
+      <Layout>
+        <p>Test </p>
+      </Layout>
+    </div>;
+  }
 }
 
 export default App;
