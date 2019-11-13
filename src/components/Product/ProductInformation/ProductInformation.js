@@ -1,5 +1,12 @@
-import React from "react";
+import React, { Component } from "react";
+import Aux from "../../../hoc/Aux";
 
-export const productInformation = props => {
-  return <div></div>;
-};
+export default class ProductInformation extends Component {
+  render() {
+    return (
+      <Aux>
+        <p>Hello from productInformation</p>
+      </Aux>
+    );
+  }
+}

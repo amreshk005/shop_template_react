@@ -1,12 +1,13 @@
 import React from "react";
 
 import Aux from "../../hoc/Aux";
-import navbar from "../Navbar/Navbar";
+import Navbar from "../Navbar/Navbar";
 
 const layout = props => (
   <Aux>
-    <navbar />
+    <Navbar />
     <main>{props.children}</main>
+    <p>Hello from layout</p>
   </Aux>
 );
 

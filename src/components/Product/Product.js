@@ -1,10 +1,14 @@
 import React from "react";
 import ProductInformation from "./ProductInformation/ProductInformation";
+import Aux from "../../hoc/Aux";
 
-export const product = props => {
+const product = props => {
   return (
-    <div>
+    <Aux>
       <ProductInformation />
-    </div>
+      <p>hello from product</p>
+    </Aux>
   );
 };
+
+export default product;
