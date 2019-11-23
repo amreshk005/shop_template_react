@@ -9,7 +9,11 @@ import MyAccount from "./MyAccount/MyAccount";
 import More from "./More/More";
 import Cart from "./Cart/Cart";
 
-export default class Navbar extends Component {
+export default class FirstNavbar extends Component {
+  state = {
+    cart: 8,
+    MyAccount: "Amresh"
+  };
   render() {
     return (
       <Aux>
@@ -19,9 +23,9 @@ export default class Navbar extends Component {
           <div className={classes["navbar-1__content"]}>
             <Logo />
             <SearchBar />
-            <MyAccount />
+            <MyAccount user={this.state.MyAccount} />
             <More />
-            <Cart />
+            <Cart cart={this.state.cart} />
           </div>
           <div className={classes["navbar-1__margin1"]}></div>
         </div>

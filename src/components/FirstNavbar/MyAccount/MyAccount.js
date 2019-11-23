@@ -1,7 +1,7 @@
 import React from "react";
 import classes from "../../../App.css";
 
-const MyAccount = () => (
+const MyAccount = props => (
   <div className={classes["navbar-1__content__Accountsection"]}>
     <div className={classes["navbar-1__content__Accountsection__Account"]}>
       <span
@@ -9,7 +9,7 @@ const MyAccount = () => (
           classes["navbar-1__content__Accountsection__Account__myAccount"]
         }
       >
-        My Account
+        {props.user}
         <svg
           className={classes["icon icon-cheveron-down"]}
           width="9"

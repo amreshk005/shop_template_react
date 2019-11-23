@@ -6,7 +6,7 @@ import classes from "./App.css";
 class App extends Component {
   render() {
     return (
-      <div className={classes.container}>
+      <div className={classes["container"]}>
         <Layout />
         <StockManager />
       </div>

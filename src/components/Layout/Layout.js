@@ -1,13 +1,18 @@
 import React from "react";
+import classes from "../../App.css";
 
 import Aux from "../../hoc/Aux";
-import Navbar from "../Navbar/Navbar";
+import FirstNavbar from "../FirstNavbar/FirstNavbar";
+import SecondNavbar from "../SecondNavbar/SecondNavbar";
+import SideBar from "../SideBar/SideBar";
 
 const layout = props => (
   <Aux>
-    <Navbar />
-    <main>{props.children}</main>
-    <p>Hello from layout</p>
+    <FirstNavbar />
+    <SecondNavbar />
+    <div className={classes["content"]}>
+      <SideBar />
+    </div>
   </Aux>
 );
 
