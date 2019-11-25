@@ -30,11 +30,11 @@ const PriceMap = props => {
     },
     map_7: {
       height: "14.0625px",
-      width: "34.6013px;"
+      width: "34.6013px"
     },
     map_8: {
       height: "20.1875px",
-      width: "34.6013px;"
+      width: "34.6013px"
     }
   };
   return (
@@ -174,7 +174,7 @@ const PriceMap = props => {
                 classes["sidebar__associate__content__3__limit__box2__min"]
               }
             >
-              <option selected value="Min" className={classes["option"]}>
+              <option selected defaultValue="Min" className={classes["option"]}>
                 Max
               </option>
               <option value="500" className={classes["option"]}>
@@ -190,36 +190,7 @@ const PriceMap = props => {
           </div>
         </div>
       </div>
-      {/* <!-- 3th sidebar ended -->
-            <!-- 4th sidebar string --> */}
-      <div className={classes["sidebar__associate__content__4"]}>
-        <div
-          className={classes["sidebar__associate__content__4__assuredsection"]}
-        >
-          <label>
-            <input
-              className={classes["inputBox"]}
-              type="checkbox"
-              name=""
-              readonly
-              value="on"
-            />
-            <div className={classes["inputBox1"]}></div>
-            <div className={classes["assuredlogo"]}>
-              <img height="21" src="./images/fa_8b4b59.png" alt="assuredlogo" />
-            </div>
-          </label>
-        </div>
-        <div className={classes["sidebar__associate__content__4__help"]}>
-          <span
-            className={
-              classes["sidebar__associate__content__4__help__question"]
-            }
-          >
-            ?
-          </span>
-        </div>
-      </div>
+      {/* {/* <!-- 3th sidebar ended --> */}
     </Aux>
   );
 };
