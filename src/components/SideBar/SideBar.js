@@ -20,17 +20,17 @@ export default class SideBar extends Component {
       'ACM'
     ],
     coustomer_rating: [
-      9733,
-      9733,
-      9733,
-      9733
+      <span>4 &#9733; & above</span>,
+      <span>3 &#9733; & above</span>,
+      <span>2 &#9733; & above</span>,
+      <span>1 &#9733; & above</span>
     ]
   }
 
  
   render() {
-  const extensions = this.state.coustomer_rating.map((item) => `${4 - this.state.coustomer_rating.indexOf(item)}&#${item}; & above`).join(',');
-  console.log(extensions)
+  // const extensions = this.state.coustomer_rating.map((item) => `${4 - this.state.coustomer_rating.indexOf(item)}&#${item}; & above`).join(',');
+  // console.log(extensions)
    const categories_list = this.state.categories.map(igkey => {
       return(
         <div className={classes[`sidebar__associate__content__2__categories${this.state.categories.indexOf(igkey) + 1}`]}>
@@ -56,7 +56,7 @@ export default class SideBar extends Component {
           <input className={classes["inputBox"]} type="checkbox" name="" readonly value="on" />
           <div className={classes["divcheckbox"]}></div>
           <div className={classes["brand"]}>
-            +{igkey}
+            {igkey} 
           </div>
         </label>
       </div>
@@ -64,6 +64,7 @@ export default class SideBar extends Component {
     )
   })
    const coustomer_rating_list = this.state.coustomer_rating.map(igkey => {
+  
       return(
         <div className={classes[`sidebar__associate__content__6__contentsection__content__${this.state.coustomer_rating.indexOf(igkey) + 2}`]}>
         <div className={classes[`sidebar__associate__content__6__contentsection__content__${this.state.coustomer_rating.indexOf(igkey) + 2}__brandsection`]}>
@@ -71,13 +72,17 @@ export default class SideBar extends Component {
             <input className={classes["inputBox"]} type="checkbox" name="" readonly value="on" />
             <div className={classes["divcheckbox"]}></div>
             <div className={classes["brand"]}>
-              {extensions}
+              {igkey.props.children}
             </div>
           </label>
         </div>
       </div>
       )
     })
+
+
+
+
     return (
     <Aux>
         <div className={classes["sidebar"]}>
