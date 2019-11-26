@@ -24,7 +24,50 @@ export default class SideBar extends Component {
       <span>3 &#9733; & above</span>,
       <span>2 &#9733; & above</span>,
       <span>1 &#9733; & above</span>
-    ]
+    ],
+    discount: [
+      '70% or more',
+      '60% or more',
+      '50% or more',
+      '40% or more',
+      '30% or more',
+      '20% or more',
+      '10% or more'
+    ],
+    size: [
+      '10 inch',
+      '10 inch - 11 inch',
+      '10 inch - 12 inch',
+      '10 inch - 13 inch',
+      '10 inch - 14 inch',
+      '10 inch - 15 inch'
+    ],
+    compartments: [
+      '1',
+      '2',
+      '3 or more'
+    ],
+    material: [
+      'leather',
+      'cotton',
+      'mixedcotton',
+      'fibre'
+    ],
+    theme: [
+      'Urban Backpacks',
+      'Laptops',
+      'Faux Leather',
+      'Top Handle',
+      'Superman',
+      'Hand Carry'
+    ],
+    offers: [
+      'Bank Offer',
+      'Buy More,Save More',
+      'No Cost EMI',
+      'Special Price'
+    ],
+
   }
 
  
@@ -73,6 +116,101 @@ export default class SideBar extends Component {
             <div className={classes["divcheckbox"]}></div>
             <div className={classes["brand"]}>
               {igkey.props.children}
+            </div>
+          </label>
+        </div>
+      </div>
+      )
+    })
+
+    const discount_list = this.state.discount.map(igkey => {
+      return (
+        <div className={classes[`sidebar__associate__content__7__contentsection__content__${this.state.discount.indexOf(igkey) + 2}`]}>
+        <div className={classes[`sidebar__associate__content__7__contentsection__content__${this.state.discount.indexOf(igkey) + 2}__brandsection`]}>
+          <label>
+            <input className={classes["inputBox"]} type="checkbox" name="" readonly value="on" />
+            <div className={classes["divcheckbox"]}></div>
+            <div className={classes["brand"]}>
+              {igkey}
+            </div>
+          </label>
+        </div>
+      </div>
+      )
+    })
+
+    const size_list = this.state.size.map(igkey => {
+      return (
+        <div className={classes[`sidebar__associate__content__8__contentsection__content__${this.state.size.indexOf(igkey) + 2}`]}>
+        <div className={classes[`sidebar__associate__content__8__contentsection__content__${this.state.size.indexOf(igkey) + 2}__brandsection`]}>
+          <label>
+            <input className={classes["inputBox"]} type="checkbox" name="" readonly value="on" />
+            <div className={classes["divcheckbox"]}></div>
+            <div className={classes["brand"]}>
+             {igkey}
+            </div>
+          </label>
+        </div>
+      </div>
+      )
+    })
+
+    const compartments_list = this.state.compartments.map(igkey => {
+      return(
+        <div className={classes[`sidebar__associate__content__9__contentsection__content__${this.state.compartments.indexOf(igkey) + 2}`]}>
+        <div className={classes[`sidebar__associate__content__9__contentsection__content__${this.state.compartments.indexOf(igkey) + 2}__brandsection`]}>
+          <label>
+            <input className={classes["inputBox"]} type="checkbox" name="" readonly value="on" />
+            <div className={classes["divcheckbox"]}></div>
+            <div className={classes["brand"]}>
+              {igkey}
+            </div>
+          </label>
+        </div>
+      </div>
+      )
+    })
+    const material_list = this.state.material.map(igkey=> {
+      return (
+        <div className={classes[`sidebar__associate__content__10__contentsection__content__${this.state.material.indexOf(igkey) + 2}`]}>
+        <div className={classes[`sidebar__associate__content__10__contentsection__content__${this.state.material.indexOf(igkey) + 2}__brandsection`]}>
+          <label>
+            <input className={classes["inputBox"]} type="checkbox" name="" readonly value="on" />
+            <div className={classes["divcheckbox"]}></div>
+            <div className={classes["brand"]}>
+              {igkey}
+            </div>
+          </label>
+        </div>
+      </div>
+      )
+    })
+
+    const theme_list = this.state.theme.map(igkey=> {
+      return (
+        <div className={classes[`sidebar__associate__content__11__contentsection__content__${this.state.theme.indexOf(igkey) + 2}`]}>
+        <div className={classes[`sidebar__associate__content__11__contentsection__content__${this.state.theme.indexOf(igkey) + 2}__brandsection`]}>
+          <label>
+            <input className={classes["inputBox"]} type="checkbox" name="" readonly value="on" />
+            <div className={classes["divcheckbox"]}></div>
+            <div className={classes["brand"]}>
+              {igkey}
+            </div>
+          </label>
+        </div>
+      </div>
+      )
+    })
+
+    const offer_list = this.state.offers.map(igkey=> {
+      return (
+        <div className={classes[`sidebar__associate__content__12__contentsection__content__${this.state.offers.indexOf(igkey) + 2}`]}>
+        <div className={classes[`sidebar__associate__content__12__contentsection__content__${this.state.offers.indexOf(igkey) + 2}__brandsection`]}>
+          <label>
+            <input className={classes["inputBox"]} type="checkbox" name="" readonly value="on" />
+            <div className={classes["divcheckbox"]}></div>
+            <div className={classes["brand"]}>
+              {igkey}
             </div>
           </label>
         </div>
@@ -199,83 +337,7 @@ export default class SideBar extends Component {
               </div>
               <div className={classes["sidebar__associate__content__7__contentsection"]}>
                 <div className={classes["sidebar__associate__content__7__contentsection__content"]}>
-                  <div className={classes["sidebar__associate__content__7__contentsection__content__2"]}>
-                    <div className={classes["sidebar__associate__content__7__contentsection__content__2__brandsection"]}>
-                      <label>
-                        <input className={classes["inputBox"]} type="checkbox" name="" readonly value="on" />
-                        <div className={classes["divcheckbox"]}></div>
-                        <div className={classes["brand"]}>
-                          70% or more
-                        </div>
-                      </label>
-                    </div>
-                  </div>
-                  <div className={classes["sidebar__associate__content__7__contentsection__content__3"]}>
-                    <div className={classes["sidebar__associate__content__7__contentsection__content__3__brandsection"]}>
-                      <label>
-                        <input className={classes["inputBox"]} type="checkbox" name="" readonly value="on" />
-                        <div className={classes["divcheckbox"]}></div>
-                        <div className={classes["brand"]}>
-                          60% or more
-                        </div>
-                      </label>
-                    </div>
-                  </div>
-                  <div className={classes["sidebar__associate__content__7__contentsection__content__4"]}>
-                    <div className={classes["sidebar__associate__content__7__contentsection__content__4__brandsection"]}>
-                      <label>
-                        <input className={classes["inputBox"]} type="checkbox" name="" readonly value="on" />
-                        <div className={classes["divcheckbox"]}></div>
-                        <div className={classes["brand"]}>
-                          50% or more
-                        </div>
-                      </label>
-                    </div>
-                  </div>
-                  <div className={classes["sidebar__associate__content__7__contentsection__content__5"]}>
-                    <div className={classes["sidebar__associate__content__7__contentsection__content__5__brandsection"]}>
-                      <label>
-                        <input className={classes["inputBox"]} type="checkbox" name="" readonly value="on" />
-                        <div className={classes["divcheckbox"]}></div>
-                        <div className={classes["brand"]}>
-                          40% or more
-                        </div>
-                      </label>
-                    </div>
-                  </div>
-                  <div className={classes["sidebar__associate__content__7__contentsection__content__6"]}>
-                    <div className={classes["sidebar__associate__content__7__contentsection__content__6__brandsection"]}>
-                      <label>
-                        <input className={classes["inputBox"]} type="checkbox" name="" readonly value="on" />
-                        <div className={classes["divcheckbox"]}></div>
-                        <div className={classes["brand"]}>
-                          30% or more
-                        </div>
-                      </label>
-                    </div>
-                  </div>
-                  <div className={classes["sidebar__associate__content__7__contentsection__content__7"]}>
-                    <div className={classes["sidebar__associate__content__7__contentsection__content__7__brandsection"]}>
-                      <label>
-                        <input className={classes["inputBox"]} type="checkbox" name="" readonly value="on" />
-                        <div className={classes["divcheckbox"]}></div>
-                        <div className={classes["brand"]}>
-                          20% or more
-                        </div>
-                      </label>
-                    </div>
-                  </div>
-                  <div className={classes["sidebar__associate__content__7__contentsection__content__8"]}>
-                    <div className={classes["sidebar__associate__content__7__contentsection__content__8__brandsection"]}>
-                      <label>
-                        <input className={classes["inputBox"]} type="checkbox" name="" readonly value="on" />
-                        <div className={classes["divcheckbox"]}></div>
-                        <div className={classes["brand"]}>
-                          10% or more
-                        </div>
-                      </label>
-                    </div>
-                  </div>
+                  {discount_list}
                 </div>
               </div>
             </div>
@@ -304,72 +366,8 @@ export default class SideBar extends Component {
                     <input type="text" className={classes["sidebar__associate__content__8__contentsection__content__1__input"]}
                       placeholder="Search Size" />
                   </div>
-                  <div className={classes["sidebar__associate__content__8__contentsection__content__2"]}>
-                    <div className={classes["sidebar__associate__content__8__contentsection__content__2__brandsection"]}>
-                      <label>
-                        <input className={classes["inputBox"]} type="checkbox" name="" readonly value="on" />
-                        <div className={classes["divcheckbox"]}></div>
-                        <div className={classes["brand"]}>
-                          10 inch
-                        </div>
-                      </label>
-                    </div>
-                  </div>
-                  <div className={classes["sidebar__associate__content__8__contentsection__content__3"]}>
-                    <div className={classes["sidebar__associate__content__8__contentsection__content__3__brandsection"]}>
-                      <label>
-                        <input className={classes["inputBox"]} type="checkbox" name="" readonly value="on" />
-                        <div className={classes["divcheckbox"]}></div>
-                        <div className={classes["brand"]}>
-                          10 inch 10 - 11 Inch
-                        </div>
-                      </label>
-                    </div>
-                  </div>
-                  <div className={classes["sidebar__associate__content__8__contentsection__content__4"]}>
-                    <div className={classes["sidebar__associate__content__8__contentsection__content__4__brandsection"]}>
-                      <label>
-                        <input className={classes["inputBox"]} type="checkbox" name="" readonly value="on" />
-                        <div className={classes["divcheckbox"]}></div>
-                        <div className={classes["brand"]}>
-                          10 inch 10 inch
-                        </div>
-                      </label>
-                    </div>
-                  </div>
-                  <div className={classes["sidebar__associate__content__8__contentsection__content__8"]}>
-                    <div className={classes["sidebar__associate__content__8__contentsection__content__5__brandsection"]}>
-                      <label>
-                        <input className={classes["inputBox"]} type="checkbox" name="" readonly value="on" />
-                        <div className={classes["divcheckbox"]}></div>
-                        <div className={classes["brand"]}>
-                          10 inch inch
-                        </div>
-                      </label>
-                    </div>
-                  </div>
-                  <div className={classes["sidebar__associate__content__8__contentsection__content__6"]}>
-                    <div className={classes["sidebar__associate__content__8__contentsection__content__6__brandsection"]}>
-                      <label>
-                        <input className={classes["inputBox"]} type="checkbox" name="" readonly value="on" />
-                        <div className={classes["divcheckbox"]}></div>
-                        <div className={classes["brand"]}>
-                          10 inch inch
-                        </div>
-                      </label>
-                    </div>
-                  </div>
-                  <div className={classes["sidebar__associate__content__8__contentsection__content__7"]}>
-                    <div className={classes["sidebar__associate__content__8__contentsection__content__7__brandsection"]}>
-                      <label>
-                        <input className={classes["inputBox"]} type="checkbox" name="" readonly value="on" />
-                        <div className={classes["divcheckbox"]}></div>
-                        <div className={classes["brand"]}>
-                          10 inch Inches
-                        </div>
-                      </label>
-                    </div>
-                  </div>
+                  {size_list}
+       
                   <div className={classes["sidebar__associate__content__5__contentsection__more"]}>
                     <span>126 More</span>
                   </div>
@@ -391,39 +389,7 @@ export default class SideBar extends Component {
               </div>
               <div className={classes["sidebar__associate__content__9__contentsection"]}>
                 <div className={classes["sidebar__associate__content__9__contentsection__content"]}>
-                  <div className={classes["sidebar__associate__content__9__contentsection__content__2"]}>
-                    <div className={classes["sidebar__associate__content__9__contentsection__content__2__brandsection"]}>
-                      <label>
-                        <input className={classes["inputBox"]} type="checkbox" name="" readonly value="on" />
-                        <div className={classes["divcheckbox"]}></div>
-                        <div className={classes["brand"]}>
-                          1
-                        </div>
-                      </label>
-                    </div>
-                  </div>
-                  <div className={classes["sidebar__associate__content__9__contentsection__content__3"]}>
-                    <div className={classes["sidebar__associate__content__9__contentsection__content__3__brandsection"]}>
-                      <label>
-                        <input className={classes["inputBox"]} type="checkbox" name="" readonly value="on" />
-                        <div className={classes["divcheckbox"]}></div>
-                        <div className={classes["brand"]}>
-                          2
-                        </div>
-                      </label>
-                    </div>
-                  </div>
-                  <div className={classes["sidebar__associate__content__9__contentsection__content__4"]}>
-                    <div className={classes["sidebar__associate__content__9__contentsection__content__4__brandsection"]}>
-                      <label>
-                        <input className={classes["inputBox"]} type="checkbox" name="" readonly value="on" />
-                        <div className={classes["divcheckbox"]}></div>
-                        <div className={classes["brand"]}>
-                          3 or more
-                        </div>
-                      </label>
-                    </div>
-                  </div>
+                  {compartments_list}
                 </div>
               </div>
             </div>
@@ -442,72 +408,8 @@ export default class SideBar extends Component {
               </div>
               <div className={classes["sidebar__associate__content__10__contentsection"]}>
                 <div className={classes["sidebar__associate__content__10__contentsection__content"]}>
-                  <div className={classes["sidebar__associate__content__10__contentsection__content__2"]}>
-                    <div className={classes["sidebar__associate__content__10__contentsection__content__2__brandsection"]}>
-                      <label>
-                        <input className={classes["inputBox"]} type="checkbox" name="" readonly value="on" />
-                        <div className={classes["divcheckbox"]}></div>
-                        <div className={classes["brand"]}>
-                          Aritifical Leather
-                        </div>
-                      </label>
-                    </div>
-                  </div>
-                  <div className={classes["sidebar__associate__content__10__contentsection__content__3"]}>
-                    <div className={classes["sidebar__associate__content__10__contentsection__content__3__brandsection"]}>
-                      <label>
-                        <input className={classes["inputBox"]} type="checkbox" name="" readonly value="on" />
-                        <div className={classes["divcheckbox"]}></div>
-                        <div className={classes["brand"]}>
-                          Canvas
-                        </div>
-                      </label>
-                    </div>
-                  </div>
-                  <div className={classes["sidebar__associate__content__10__contentsection__content__4"]}>
-                    <div className={classes["sidebar__associate__content__10__contentsection__content__4__brandsection"]}>
-                      <label>
-                        <input className={classes["inputBox"]} type="checkbox" name="" readonly value="on" />
-                        <div className={classes["divcheckbox"]}></div>
-                        <div className={classes["brand"]}>
-                          Cotton
-                        </div>
-                      </label>
-                    </div>
-                  </div>
-                  <div className={classes["sidebar__associate__content__10__contentsection__content__5"]}>
-                    <div className={classes["sidebar__associate__content__10__contentsection__content__5__brandsection"]}>
-                      <label>
-                        <input className={classes["inputBox"]} type="checkbox" name="" readonly value="on" />
-                        <div className={classes["divcheckbox"]}></div>
-                        <div className={classes["brand"]}>
-                          Denim
-                        </div>
-                      </label>
-                    </div>
-                  </div>
-                  <div className={classes["sidebar__associate__content__10__contentsection__content__6"]}>
-                    <div className={classes["sidebar__associate__content__10__contentsection__content__6__brandsection"]}>
-                      <label>
-                        <input className={classes["inputBox"]} type="checkbox" name="" readonly value="on" />
-                        <div className={classes["divcheckbox"]}></div>
-                        <div className={classes["brand"]}>
-                          Fabric
-                        </div>
-                      </label>
-                    </div>
-                  </div>
-                  <div className={classes["sidebar__associate__content__10__contentsection__content__7"]}>
-                    <div className={classes["sidebar__associate__content__10__contentsection__content__7__brandsection"]}>
-                      <label>
-                        <input className={classes["inputBox"]} type="checkbox" name="" readonly value="on" />
-                        <div className={classes["divcheckbox"]}></div>
-                        <div className={classes["brand"]}>
-                          Genuine Leather
-                        </div>
-                      </label>
-                    </div>
-                  </div>
+                  {material_list}
+        
                   <div className={classes["sidebar__associate__content__5__contentsection__more"]}>
                     <span>126 More</span>
                   </div>
@@ -529,72 +431,8 @@ export default class SideBar extends Component {
               </div>
               <div className={classes["sidebar__associate__content__11__contentsection"]}>
                 <div className={classes["sidebar__associate__content__11__contentsection__content"]}>
-                  <div className={classes["sidebar__associate__content__11__contentsection__content__2"]}>
-                    <div className={classes["sidebar__associate__content__11__contentsection__content__2__brandsection"]}>
-                      <label>
-                        <input className={classes["inputBox"]} type="checkbox" name="" readonly value="on" />
-                        <div className={classes["divcheckbox"]}></div>
-                        <div className={classes["brand"]}>
-                          Urban Backpacks
-                        </div>
-                      </label>
-                    </div>
-                  </div>
-                  <div className={classes["sidebar__associate__content__11__contentsection__content__3"]}>
-                    <div className={classes["sidebar__associate__content__11__contentsection__content__3__brandsection"]}>
-                      <label>
-                        <input className={classes["inputBox"]} type="checkbox" name="" readonly value="on" />
-                        <div className={classes["divcheckbox"]}></div>
-                        <div className={classes["brand"]}>
-                          Laptops
-                        </div>
-                      </label>
-                    </div>
-                  </div>
-                  <div className={classes["sidebar__associate__content__11__contentsection__content__4"]}>
-                    <div className={classes["sidebar__associate__content__11__contentsection__content__4__brandsection"]}>
-                      <label>
-                        <input className={classes["inputBox"]} type="checkbox" name="" readonly value="on" />
-                        <div className={classes["divcheckbox"]}></div>
-                        <div className={classes["brand"]}>
-                          Faux Leather
-                        </div>
-                      </label>
-                    </div>
-                  </div>
-                  <div className={classes["sidebar__associate__content__11__contentsection__content__5"]}>
-                    <div className={classes["sidebar__associate__content__11__contentsection__content__5__brandsection"]}>
-                      <label>
-                        <input className={classes["inputBox"]} type="checkbox" name="" readonly value="on" />
-                        <div className={classes["divcheckbox"]}></div>
-                        <div className={classes["brand"]}>
-                          Top Handle
-                        </div>
-                      </label>
-                    </div>
-                  </div>
-                  <div className={classes["sidebar__associate__content__11__contentsection__content__6"]}>
-                    <div className={classes["sidebar__associate__content__11__contentsection__content__6__brandsection"]}>
-                      <label>
-                        <input className={classes["inputBox"]} type="checkbox" name="" readonly value="on" />
-                        <div className={classes["divcheckbox"]}></div>
-                        <div className={classes["brand"]}>
-                          Superman
-                        </div>
-                      </label>
-                    </div>
-                  </div>
-                  <div className={classes["sidebar__associate__content__11__contentsection__content__7"]}>
-                    <div className={classes["sidebar__associate__content__11__contentsection__content__7__brandsection"]}>
-                      <label>
-                        <input className={classes["inputBox"]} type="checkbox" name="" readonly value="on" />
-                        <div className={classes["divcheckbox"]}></div>
-                        <div className={classes["brand"]}>
-                          Hand Carry
-                        </div>
-                      </label>
-                    </div>
-                  </div>
+              {theme_list}
+      
                   <div className={classes["sidebar__associate__content__5__contentsection__more"]}>
                     <span>126 More</span>
                   </div>
@@ -616,50 +454,9 @@ export default class SideBar extends Component {
               </div>
               <div className={classes["sidebar__associate__content__12__contentsection"]}>
                 <div className={classes["sidebar__associate__content__12__contentsection__content"]}>
-                  <div className={classes["sidebar__associate__content__12__contentsection__content__2"]}>
-                    <div className={classes["sidebar__associate__content__12__contentsection__content__2__brandsection"]}>
-                      <label>
-                        <input className={classes["inputBox"]} type="checkbox" name="" readonly value="on" />
-                        <div className={classes["divcheckbox"]}></div>
-                        <div className={classes["brand"]}>
-                          Bank Offer
-                        </div>
-                      </label>
-                    </div>
-                  </div>
-                  <div className={classes["sidebar__associate__content__12__contentsection__content__3"]}>
-                    <div className={classes["sidebar__associate__content__12__contentsection__content__3__brandsection"]}>
-                      <label>
-                        <input className={classes["inputBox"]} type="checkbox" name="" readonly value="on" />
-                        <div className={classes["divcheckbox"]}></div>
-                        <div className={classes["brand"]}>
-                          Buy More, Save More
-                        </div>
-                      </label>
-                    </div>
-                  </div>
-                  <div className={classes["sidebar__associate__content__12__contentsection__content__4"]}>
-                    <div className={classes["sidebar__associate__content__12__contentsection__content__4__brandsection"]}>
-                      <label>
-                        <input className={classes["inputBox"]} type="checkbox" name="" readonly value="on" />
-                        <div className={classes["divcheckbox"]}></div>
-                        <div className={classes["brand"]}>
-                          No Cost EMI
-                        </div>
-                      </label>
-                    </div>
-                  </div>
-                  <div className={classes["sidebar__associate__content__12__contentsection__content__5"]}>
-                    <div className={classes["sidebar__associate__content__12__contentsection__content__5__brandsection"]}>
-                      <label>
-                        <input className={classes["inputBox"]} type="checkbox" name="" readonly value="on" />
-                        <div className={classes["divcheckbox"]}></div>
-                        <div className={classes["brand"]}>
-                          Special Price
-                        </div>
-                      </label>
-                    </div>
-                  </div>
+           
+              {offer_list}
+            
                   <div className={classes["sidebar__associate__content__5__contentsection__more"]}>
                     <span>126 More</span>
                   </div>
