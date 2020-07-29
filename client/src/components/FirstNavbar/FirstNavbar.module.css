@@ -1,0 +1,23 @@
+.navbar-1 {
+  height: 56px;
+  width: 100vw;
+  background: #2874f0;
+  color: #f0f0f0;
+  display: flex;
+  align-items: center;
+}
+.navbar-1__margin {
+  height: 100%;
+  min-width: 124px;
+}
+.navbar-1__content {
+  max-width: 1248px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.navbar-1__margin1 {
+  height: 100%;
+  min-width: 124px;
+}

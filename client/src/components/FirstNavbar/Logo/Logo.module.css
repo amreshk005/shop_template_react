@@ -1,0 +1,11 @@
+.navbar-1__content__logosection {
+  min-width: 137px;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.navbar-1__content__logosection__logo {
+  height: 20px;
+  width: 75px;
+}

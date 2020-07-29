@@ -1,0 +1,38 @@
+.navbar-1__content__MyCartSection__Cart {
+  height: 100%;
+  width: 62px;
+}
+.navbar-1__content__MyCartSection__Cart__myCart {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: flex-start;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.1px;
+  color: #fff;
+  cursor: pointer;
+}
+.navbar-1__content__MyCartSection__Cart__myCart__icon {
+  display: inline-block;
+  position: relative;
+}
+.navbar-1__content__MyCartSection__Cart__myCart__icon .icon {
+  display: inline-block;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+.navbar-1__content__MyCartSection__Cart__myCart__icon__notifications {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 40%;
+  background: red;
+  z-index: 7;
+  margin: -35px 0 0 7px;
+  font-size: 15px;
+  text-align: center;
+  border: 1px solid #fff;
+}

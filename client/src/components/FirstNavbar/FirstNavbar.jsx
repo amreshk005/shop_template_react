@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import classes from "../../App.css";
-import "../../App.css";
+import classes from "./FirstNavbar.module.css";
+// import "../../App.css";
 import Aux from "../../hoc/Aux";
 
 import Logo from "./Logo/Logo";
@@ -12,7 +12,7 @@ import Cart from "./Cart/Cart";
 export default class FirstNavbar extends Component {
   state = {
     cart: 8,
-    MyAccount: "Amresh"
+    MyAccount: "Amresh",
   };
   render() {
     return (
