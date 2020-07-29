@@ -1,7 +1,7 @@
 import React from "react";
-import classes from "../../../App.css";
+import classes from "./MyAccount.module.css";
 
-const MyAccount = props => (
+const MyAccount = (props) => (
   <div className={classes["navbar-1__content__Accountsection"]}>
     <div className={classes["navbar-1__content__Accountsection__Account"]}>
       <span className={classes["navbar-1__content__Accountsection__Account__myAccount"]}>

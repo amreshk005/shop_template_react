@@ -1,12 +1,12 @@
 import React from "react";
-import classes from "../../App.css";
+import classes from "./Layout.module.css";
 
 import Aux from "../../hoc/Aux";
 import FirstNavbar from "../FirstNavbar/FirstNavbar";
 import SecondNavbar from "../SecondNavbar/SecondNavbar";
-import SideBar from "../SideBar/SideBar";
+import SideBar from "../SideBar/sideBar";
 
-const layout = props => (
+const Layout = (props) => (
   <Aux>
     <FirstNavbar />
     <SecondNavbar />
@@ -16,4 +16,4 @@ const layout = props => (
   </Aux>
 );
 
-export default layout;
+export default Layout;

@@ -1,0 +1,36 @@
+.content {
+  width: 100vw;
+  min-height: 100vh;
+  background: whitesmoke;
+  color: #242424;
+  display: flex;
+}
+
+.content .sidebar__associate__content {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.content .sidebar__associate__content__titlesection {
+  width: 90%;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  margin: -16px;
+  padding: 16px;
+}
+
+.content .sidebar__associate__content__titlesection__title {
+  padding-bottom: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  display: inline-block;
+  width: 95%;
+  cursor: pointer;
+}

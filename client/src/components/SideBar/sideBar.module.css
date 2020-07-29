@@ -1,0 +1,112 @@
+.sidebar {
+  flex: 0 0 280px;
+  max-width: 280px;
+  padding: 10px 10px 0px 10px;
+  flex-flow: column;
+  background: whitesmoke;
+}
+.sidebar__associate {
+  position: relative;
+  background: #fff;
+  box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.06);
+}
+.sidebar__associate__content {
+  max-width: 280px;
+}
+.sidebar__associate__content__1 {
+  padding-bottom: 12px;
+  padding: 16px;
+  border-bottom: 1px solid #f0f0f0;
+}
+.sidebar__associate__content__1__filters {
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: capitalize;
+  width: 67%;
+  color: #242424;
+  letter-spacing: 0.3px;
+}
+
+.sidebar__associate__content__4 {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+  border-bottom: 1px solid #f0f0f0;
+  cursor: pointer;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+}
+.sidebar__associate__content__4__assuredsection {
+  width: 100%;
+  box-sizing: border-box;
+}
+.sidebar__associate__content__4__assuredsection label {
+  display: flex;
+}
+.sidebar__associate__content__4__assuredsection .inputBox {
+  display: inline-block;
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  vertical-align: top !important;
+  cursor: pointer;
+}
+.sidebar__associate__content__4__assuredsection .inputBox1 {
+  position: relative;
+  width: 14px;
+  height: 14px;
+  background-color: transparent;
+  border: 1.4px solid #c2c2c2;
+  border-radius: 1.5px;
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.sidebar__associate__content__4__assuredsection .inputBox1:before {
+  position: absolute;
+  content: "";
+  left: 5px;
+  top: 2px;
+  width: 4px;
+  height: 8px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  backface-visibility: hidden;
+  cursor: pointer;
+}
+.sidebar__associate__content__4__assuredsection .inputBox[type="checkbox"]:checked + .inputBox1 {
+  background: #2874f0;
+  border: 1.4px solid #2874f0;
+}
+.sidebar__associate__content__4__assuredsection .assuredlogo {
+  padding-left: 0 10px;
+  font-size: 16px;
+  padding-left: 11px;
+  display: inline-block;
+  width: calc(100%-25px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1;
+  cursor: pointer;
+  font-weight: 500;
+}
+.sidebar__associate__content__4__help__question {
+  border-radius: 50%;
+  background: #fff;
+  color: #878787;
+  font-weight: 600;
+  width: 18px;
+  height: 18px;
+  font-size: 11px;
+  line-height: 16px;
+  text-align: center;
+  display: inline-block;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.2);
+  vertical-align: middle;
+  margin: 0 2px 0 8px;
+  cursor: pointer;
+}

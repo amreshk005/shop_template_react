@@ -1,5 +1,5 @@
 import React from "react";
-import classes from "../../../App.css";
+import classes from "./More.module.css";
 
 const More = () => (
   <div className={classes["navbar-1__content__MoreSection"]}>

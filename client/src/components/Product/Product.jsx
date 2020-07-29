@@ -2,7 +2,7 @@ import React from "react";
 import ProductInformation from "./ProductInformation/ProductInformation";
 import Aux from "../../hoc/Aux";
 
-const product = props => {
+const product = (props) => {
   return (
     <Aux>
       <ProductInformation />

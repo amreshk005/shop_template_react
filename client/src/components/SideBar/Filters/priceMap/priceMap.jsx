@@ -1,41 +1,41 @@
 import React from "react";
-import Aux from "../../../hoc/Aux";
-import classes from "../../../App.css";
+import Aux from "../../../../hoc/Aux";
+import classes from "./priceMap.module.css";
 
-const PriceMap = props => {
+const priceMap = (props) => {
   const divStyle = {
     map_1: {
       height: "29px",
-      width: "29.6013px"
+      width: "29.6013px",
     },
     map_2: {
       height: "22.3125px",
-      width: "29.6013px"
+      width: "29.6013px",
     },
     map_3: {
       height: "23.4375px",
-      width: "29.6013px"
+      width: "29.6013px",
     },
     map_4: {
       height: "15.625px",
-      width: "29.6013px"
+      width: "29.6013px",
     },
     map_5: {
       height: "20.625px",
-      width: "29.6013px"
+      width: "29.6013px",
     },
     map_6: {
       height: "17.1875px",
-      width: "30.6013px"
+      width: "30.6013px",
     },
     map_7: {
       height: "14.0625px",
-      width: "34.6013px"
+      width: "34.6013px",
     },
     map_8: {
       height: "20.1875px",
-      width: "34.6013px"
-    }
+      width: "34.6013px",
+    },
   };
   return (
     <Aux>
@@ -106,4 +106,4 @@ const PriceMap = props => {
   );
 };
 
-export default PriceMap;
+export default priceMap;

@@ -1,0 +1,30 @@
+.navbar-2 {
+  min-height: 40px;
+  width: 100vw;
+  color: black;
+  text-align: center;
+  background-color: #fff;
+}
+.navbar-2__menu {
+  margin: 0 auto;
+  padding: 0 16px;
+  max-width: 1248px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  text-align: left;
+  white-space: nowrap;
+  font-weight: 600;
+}
+.navbar-2__menu li {
+  list-style: none;
+}
+.navbar-2__menu li > * {
+  padding: 12px 10px 9px;
+  font-weight: 600;
+  display: block;
+  cursor: pointer;
+  position: relative;
+  color: #212121;
+}
