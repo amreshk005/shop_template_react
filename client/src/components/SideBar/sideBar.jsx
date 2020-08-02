@@ -22,20 +22,15 @@ export default class SideBar extends Component {
               <div className={classes["sidebar__associate__content__1"]}>
                 <span className={classes["sidebar__associate__content__1__filters"]}>Filters</span>
               </div>
-              {/* <!-- 1th sidebar ended -->
-            <!-- 2th sidebar string --> */}
               <Categories />
-              {/* <!-- 2th sidebar ended -->
-            <!-- 3th sidebar string --> */}
               <PriceMap />
-              {/* <!-- 4th sidebar string --> */}
               <div className={classes["sidebar__associate__content__4"]}>
                 <div className={classes["sidebar__associate__content__4__assuredsection"]}>
                   <label>
-                    <input className={classes["inputBox"]} type="checkbox" name="" readonly value="on" />
+                    <input className={classes["inputBox"]} type="checkbox" name="" readOnly value="on" />
                     <div className={classes["inputBox1"]}></div>
                     <div className={classes["assuredlogo"]}>
-                      <img height="21" src={require("../../assets/images/fa_8b4b59.png")} alt="assuredlogo" />
+                      <img height="21" src="/assets/images/fa_8b4b59.png" alt="assuredlogo" />
                     </div>
                   </label>
                 </div>

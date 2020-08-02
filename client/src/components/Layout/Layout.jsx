@@ -5,6 +5,7 @@ import Aux from "../../hoc/Aux";
 import FirstNavbar from "../FirstNavbar/FirstNavbar";
 import SecondNavbar from "../SecondNavbar/SecondNavbar";
 import SideBar from "../SideBar/sideBar";
+import Products from "../Products/Products";
 
 const Layout = (props) => (
   <Aux>
@@ -12,6 +13,7 @@ const Layout = (props) => (
     <SecondNavbar />
     <div className={classes["content"]}>
       <SideBar />
+      <Products />
     </div>
   </Aux>
 );
