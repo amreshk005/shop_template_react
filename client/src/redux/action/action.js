@@ -23,6 +23,7 @@ const fetchPostFailure = (error) => {
 
 const fetchData = () => {
   return async (dispatch) => {
+    console.log("Hello");
     dispatch(fetchPostRequest());
     return await axios
       .get(`http://localhost:8080/getAllProducts`)

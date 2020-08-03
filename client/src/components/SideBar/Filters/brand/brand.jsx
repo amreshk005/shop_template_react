@@ -1,11 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { connect } from "react-redux";
 import Svgicon from "../../../HelperComponent/svgIcon/downArrow/downArrow";
 import classes from "../Filters.module.css";
+import { fetchData } from "../../../../redux/action/action";
 import { v4 as uuidv4 } from "uuid";
 
-export default function Brand() {
+function Brand(props) {
   const [brand] = useState(["Skybags", "American Tourister", "Puma", "Theskinmantra", "LeeRooy", "ACM"]);
 
+  useEffect(() => {
+    props.fetchData();
+    console.log("in brand", props.data);
+  }, []);
   return (
     <>
       {" "}
@@ -24,23 +30,37 @@ export default function Brand() {
 
               <input type="text" className={classes["sidebar__associate__content__contentsection__content__input"]} placeholder="Search Brand" />
             </div>
-            {brand?.map((igkey) => (
-              <div key={uuidv4()} className={classes["sidebar__associate__content__contentsection__content"]}>
-                <div className={classes["sidebar__associate__content__contentsection__content__brandsection"]}>
-                  <label>
-                    <input className={classes["inputBox"]} type="checkbox" name="" readOnly value="on" />
-                    <div className={classes["divcheckbox"]}></div>
-                    <div className={classes["brand"]}>{igkey}</div>
-                  </label>
+            <div className={classes["sidebar__associate__content__contentsection"]}>
+              {brand?.map((igkey) => (
+                <div key={uuidv4()} className={classes["sidebar__associate__content__contentsection__content"]}>
+                  <div className={classes["sidebar__associate__content__contentsection__content__brandsection"]}>
+                    <label>
+                      <input className={classes["inputBox"]} type="checkbox" name="" readOnly value="on" />
+                      <div className={classes["divcheckbox"]}></div>
+                      <div className={classes["brand"]}>{igkey}</div>
+                    </label>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-          <div className={classes["sidebar__associate__content__contentsection__more"]}>
+          {/* <div className={classes["sidebar__associate__content__contentsection__more"]}>
             <span>1790 More</span>
-          </div>
+          </div> */}
         </div>
       </div>
     </>
   );
 }
+
+const mapStateToProps = (state) => {
+  return {
+    data: state.data,
+  };
+};
+const mapDisptachToProps = (dispatch) => {
+  return {
+    fetchData: (payload) => dispatch(fetchData(payload)),
+  };
+};
+export default connect(mapStateToProps, mapDisptachToProps)(Brand);

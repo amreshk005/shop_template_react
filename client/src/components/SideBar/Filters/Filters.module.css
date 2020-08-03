@@ -3,6 +3,9 @@
   padding: 10px 0px 25px 10px;
   box-sizing: border-box;
   border-bottom: 1px solid #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .sidebar__associate__content__titlesection {
@@ -33,10 +36,16 @@
   fill: currentColor;
 }
 
+.sidebar__associate__content__contentsection {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-top: 7px;
+}
 .sidebar__associate__content__contentsection__content {
-  margin: 7px 0;
+  margin: 18px 0;
   box-sizing: content-box;
-  padding-top: 20px;
+  /* padding-top: 20px; */
   /* margin-bottom: 20px; */
   position: relative;
 }

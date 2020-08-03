@@ -14,21 +14,19 @@ export default function DiscountList() {
           <Svgicon />
         </div>
         <div className={classes["sidebar__associate__content__contentsection"]}>
-          <div className={classes["sidebar__associate__content__contentsection__content"]}>
-            {discount?.map((igkey) => {
-              return (
-                <div key={uuidv4()} className={classes["sidebar__associate__content__contentsection__content"]}>
-                  <div className={classes["sidebar__associate__content__contentsection__content__brandsection"]}>
-                    <label>
-                      <input className={classes["inputBox"]} type="checkbox" name="" readOnly value="on" />
-                      <div className={classes["divcheckbox"]}></div>
-                      <div className={classes["brand"]}>{igkey}</div>
-                    </label>
-                  </div>
+          {discount?.map((igkey) => {
+            return (
+              <div key={uuidv4()} className={classes["sidebar__associate__content__contentsection__content"]}>
+                <div className={classes["sidebar__associate__content__contentsection__content__brandsection"]}>
+                  <label>
+                    <input className={classes["inputBox"]} type="checkbox" name="" readOnly value="on" />
+                    <div className={classes["divcheckbox"]}></div>
+                    <div className={classes["brand"]}>{igkey}</div>
+                  </label>
                 </div>
-              );
-            })}
-          </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </>

@@ -14,19 +14,17 @@ export default function CoustomerRatingList() {
           <Svgicon />
         </div>
         <div className={classes["sidebar__associate__content__contentsection"]}>
-          <div className={classes["sidebar__associate__content__contentsection__content"]}>
-            {coustomerRating.map((igkey) => (
-              <div key={uuidv4()} className={classes["sidebar__associate__content__contentsection__content"]}>
-                <div className={classes["sidebar__associate__content__contentsection__content__brandsection"]}>
-                  <label>
-                    <input className={classes["inputBox"]} type="checkbox" name="" readOnly value="on" />
-                    <div className={classes["divcheckbox"]}></div>
-                    <div className={classes["brand"]}>{igkey.props.children}</div>
-                  </label>
-                </div>
+          {coustomerRating.map((igkey) => (
+            <div key={uuidv4()} className={classes["sidebar__associate__content__contentsection__content"]}>
+              <div className={classes["sidebar__associate__content__contentsection__content__brandsection"]}>
+                <label>
+                  <input className={classes["inputBox"]} type="checkbox" name="" readOnly value="on" />
+                  <div className={classes["divcheckbox"]}></div>
+                  <div className={classes["brand"]}>{igkey.props.children}</div>
+                </label>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </>

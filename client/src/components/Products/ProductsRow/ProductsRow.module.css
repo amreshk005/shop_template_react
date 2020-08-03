@@ -18,9 +18,9 @@
 .itemsrow__row__items__item {
   display: flex;
   flex-flow: column;
-  width: 25%;
+  width: 24%;
   height: 100%;
-  margin: 5px 0 0px 0px;
+  margin: 5px 0 0px 7px;
   transition: all ease-in-out;
   background: #fff;
   z-index: 0;
@@ -29,26 +29,23 @@
   width: 100%;
   height: 100%;
   display: flex;
-  flex-flow: row-reverse;
   position: relative;
   background: #fff;
 }
 .itemsrow__row__items__item__imagesection__range {
+  width: 100%;
   padding-top: 80%;
   z-index: 1;
+  display: flex;
+  justify-content: center;
 }
 .itemsrow__row__items__item__imagesection__range__image {
   position: absolute;
-  top: 0;
-  left: 0;
   bottom: 0;
-  right: 0;
   max-width: 100%;
   max-height: 100%;
   transition: opacity 0.5s linear;
   opacity: 1;
-  margin: auto;
-  margin-left: 10px;
 }
 .itemsrow__row__items__item__imagesection .icon {
   display: inline-block;
@@ -62,7 +59,7 @@
   cursor: pointer;
 }
 .itemsrow__row__items__item__infosection > * {
-  padding: 4px 20px 0 15px;
+  /* padding: 4px 20px 0 15px; */
 }
 .itemsrow__row__items__item__infosection {
   width: 100%;
@@ -73,9 +70,26 @@
   font-weight: 500;
   transition: all 0.6s ease-out;
   transform: translateY(15%);
+  padding: 0px 0px 0 7px;
+}
+.itemsrow__row__items__item__infosection__brand {
+  width: 8rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-transform: uppercase;
+  text-overflow: ellipsis;
+  color: #878787;
+  font-size: 14px;
+  font-weight: 500;
 }
 .itemsrow__row__items__item__infosection__name {
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
+  color: #000;
+  width: 8rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  /* font-family: Roboto, Arial, sans-serif; */
 }
 .itemsrow__row__items__item__infosection__pricesection {
   display: flex;
@@ -110,7 +124,7 @@
 }
 .itemsrow__row__items__item__infosection .addtocart .cartbtn {
   height: 100%;
-  width: 100%;
+  width: 80%;
   font-size: 14px;
   background-image: linear-gradient(to right bottom, #2874f0, #2874f0);
   border-radius: 5px;
@@ -118,6 +132,7 @@
   text-align: center;
   cursor: pointer;
   border: none;
+  padding: 0 !important;
 }
 .itemsrow__row__items__item__infosection:hover {
   /* transform: translateY(-10px); */

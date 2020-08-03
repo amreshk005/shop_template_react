@@ -9,8 +9,6 @@ import { fetchData } from "../../redux/action/action";
 function Product(props) {
   useEffect(() => {
     // console.log("data");
-    // console.log(props.fetchData());
-    // console.log(props.data);
   }, []);
   return (
     <div className={classes["main"]}>

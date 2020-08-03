@@ -6,7 +6,7 @@ const APIFeatures = require("../utils/APIFeatures");
 
 exports.getAllProducts = async (req, res) => {
   try {
-    const products = await Product.find();
+    // const products = await Product.find();
     let filter = {};
     // if(req.params.tourId) filter = {tour: req.params.tour }
     const features = new APIFeatures(Product.find(), req.query).filter();
@@ -14,10 +14,8 @@ exports.getAllProducts = async (req, res) => {
     console.log("doc", doc);
     res.status(200).json({
       status: "success",
-      results: products.length,
-      data: {
-        products,
-      },
+      results: doc.length,
+      data: doc,
     });
   } catch (err) {
     res.status(404).json({
