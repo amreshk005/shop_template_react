@@ -133,6 +133,7 @@
   line-height: 1;
   cursor: pointer;
   font-weight: 500;
+  text-transform: capitalize;
 }
 
 .sidebar__associate__content__contentsection__more {

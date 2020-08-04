@@ -18,7 +18,7 @@ function ProductsRow(props) {
       <div className={classes["itemsrow__row"]}>
         <div className={classes["itemsrow__row__items"]}>
           {!data ? (
-            <div>Loading</div>
+            <div>Loading..</div>
           ) : (
             data.map((e) => (
               <div key={uuidv4()} className={classes["itemsrow__row__items__item"]}>
@@ -66,6 +66,7 @@ function ProductsRow(props) {
 const mapStateToProps = (state) => {
   return {
     data: state.data,
+    isLoading: state.isLoading
   };
 };
 const mapDisptachToProps = (dispatch) => {

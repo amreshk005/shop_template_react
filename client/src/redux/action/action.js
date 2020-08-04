@@ -1,9 +1,10 @@
 import axios from "axios";
 import { FETCH_PRODUCT_LIST_REQUEST, FETCH_PRODUCT_LIST_SUCCESS, FETCH_PRODUCT_LIST_FAILURE } from "../actionTypes/actionTypes";
 
-const fetchPostRequest = () => {
+const fetchPostRequest = (query) => {
   return {
     type: FETCH_PRODUCT_LIST_REQUEST,
+    query: query || ''
   };
 };
 
@@ -21,14 +22,14 @@ const fetchPostFailure = (error) => {
   };
 };
 
-const fetchData = () => {
+const fetchData = (query='') => {
+  console.log(query)
   return async (dispatch) => {
-    console.log("Hello");
-    dispatch(fetchPostRequest());
+    dispatch(fetchPostRequest(query));
     return await axios
-      .get(`http://localhost:8080/getAllProducts`)
+      .get(`http://localhost:8080/getAllProducts/?${query}`)
       .then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         return dispatch(fetchPostSuccess(res.data));
       })
       .catch((err) => dispatch(fetchPostFailure(err)));

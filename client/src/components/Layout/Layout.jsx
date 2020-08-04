@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import classes from "./Layout.module.css";
 
 import Aux from "../../hoc/Aux";
@@ -7,7 +7,11 @@ import SecondNavbar from "../SecondNavbar/SecondNavbar";
 import SideBar from "../SideBar/sideBar";
 import Products from "../Products/Products";
 
-const Layout = (props) => (
+function Layout(props){
+  // const [query, setquery] = useState('?')
+
+  return (
+
   <Aux>
     <FirstNavbar />
     <SecondNavbar />
@@ -16,6 +20,7 @@ const Layout = (props) => (
       <Products />
     </div>
   </Aux>
-);
+  )
+};
 
 export default Layout;

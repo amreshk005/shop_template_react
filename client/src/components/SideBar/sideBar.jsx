@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import Aux from "../../hoc/Aux";
 import classes from "./sideBar.module.css";
 
@@ -7,12 +8,39 @@ import Categories from "./Filters/categories/Categories";
 import Brand from "./Filters/brand/brand";
 import CoustmerRating from "./Filters/coustomerRatingList/CoustomerRatingList";
 import Discount from "./Filters/discountList/DiscountList";
-import Size from "./Filters/sizeList/SizeList";
-import Offer from "./Filters/offerList/OfferList";
+// import Size from "./Filters/sizeList/SizeList";
+// import Offer from "./Filters/offerList/OfferList";
+import { fetchData } from "../../redux/action/action";
 
-export default class SideBar extends Component {
-  state = {};
+class SideBar extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      query: [],
+    };
+  }
 
+  filterHandler = (getQuery,itemChecked) => {
+    let {query} = this.state
+    let newQuery 
+    if(itemChecked == true){
+      newQuery = [...query, getQuery]
+      this.setState({
+        query: newQuery
+      })
+    }else{
+      newQuery = query.filter(e => e !==  getQuery)
+      this.setState({
+        query: newQuery
+      })
+    }
+    let queryStr = ''
+    newQuery.forEach(item => {
+      queryStr = !queryStr.length?`brand=${item}`:`${queryStr}&brand=${item}`
+    })
+    console.log(queryStr)
+    this.props.fetchData(queryStr)
+  }
   render() {
     return (
       <Aux>
@@ -38,15 +66,15 @@ export default class SideBar extends Component {
                   <span className={classes["sidebar__associate__content__4__help__question"]}>?</span>
                 </div>
               </div>
-              <Brand />
+              <Brand filterHandler={this.filterHandler} />
               <CoustmerRating />
               <Discount />
-              <Size />
+              {/* <Size data={data} /> */}
               {/* <Compartment /> */}
               {/* <Material/> */}
               {/* <Theme/> */}
-              <Offer />
-              <Discount />
+              {/* <Offer data={data} /> */}
+              {/* <Discount data={data} /> */}
             </div>
           </div>
         </div>
@@ -54,3 +82,16 @@ export default class SideBar extends Component {
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    data: state.data,
+  };
+};
+const mapDisptachToProps = (dispatch) => {
+  return {
+    fetchData: (payload) => dispatch(fetchData(payload)),
+  };
+};
+
+export default connect(mapStateToProps, mapDisptachToProps)(SideBar);

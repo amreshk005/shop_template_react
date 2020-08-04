@@ -2,9 +2,21 @@ import React, { useState } from "react";
 import classes from "../Filters.module.css";
 import Svgicon from "../../../HelperComponent/svgIcon/downArrow/downArrow";
 import { v4 as uuidv4 } from "uuid";
+// import { connect } from "react-redux";
+// import { filterHelper } from "../../../HelperComponent/filter";
+// import { fetchData } from "../../../../redux/action/action";
 
 export default function CoustomerRatingList() {
   const [coustomerRating] = useState([<span>4 &#9733; & above</span>, <span>3 &#9733; & above</span>, <span>2 &#9733; & above</span>, <span>1 &#9733; & above</span>]);
+
+  // const [coustomerRating, setRating] = useState([]);
+
+  // useEffect(() => {
+  //   props.fetchData().then((res) => {
+  //     let { data } = res.data;
+  //     setRating(Object.keys(filterHelper(data, "rating")));
+  //   });
+  // }, []);
 
   return (
     <>
@@ -30,3 +42,16 @@ export default function CoustomerRatingList() {
     </>
   );
 }
+// const mapStateToProps = (state) => {
+//   return {
+//     data: state.data,
+//     isLoading: state.isLoading,
+//   };
+// };
+// const mapDisptachToProps = (dispatch) => {
+//   return {
+//     fetchData: (payload) => dispatch(fetchData(payload)),
+//   };
+// };
+
+// export default connect(mapStateToProps, mapDisptachToProps)(CoustomerRatingList);
