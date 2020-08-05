@@ -10,11 +10,10 @@ const initStore = {
 const reducer = (state = initStore, action) => {
   switch (action.type) {
     case FETCH_PRODUCT_LIST_REQUEST:
-      console.log(state.query, action.query)
       return {
         ...state,
         isLoading: true,
-        query: state.query + action.query,
+        query: action.query,
       };
     case FETCH_PRODUCT_LIST_SUCCESS:
       return {

@@ -9,31 +9,33 @@ import { filterHelper } from "../../../HelperComponent/filter";
 function Brand(props) {
   const [checkBoxStatus, setCheckBoxStatus] = useState([]);
   const [brand, setBrand] = useState([]);
-  
 
   useEffect(() => {
-    props.fetchData().then((res) => {
-      let { data } = res.data;
-      let arr = filterHelper(data, "brand")
-      arr.forEach((e, index) => {
-        setCheckBoxStatus(result => [...result, {name: e, isChecked:false}])
-      })  
-      setBrand(arr);  
-    }).catch((err) => console.log(err)) 
+    props
+      .fetchData()
+      .then((res) => {
+        let { data } = res.data;
+        let arr = filterHelper(data, "brand");
+        arr.forEach((e, index) => {
+          setCheckBoxStatus((result) => [...result, { name: e, isChecked: false }]);
+        });
+        setBrand(arr);
+      })
+      .catch((err) => console.log(err));
   }, []);
 
-   const changeHandler = (e) => {
-    console.log("hello", e.target.name, e.target.checked, checkBoxStatus);
-     let newData = checkBoxStatus.map((item,index)=> {
-      if(item.name === e.target.name){
-        item.isChecked = !item.isChecked
-        props.filterHandler(item.name, item.isChecked)
+  const changeHandler = (e) => {
+    // console.log("hello", e.target.name, e.target.checked, checkBoxStatus);
+    let newData = checkBoxStatus.map((item, index) => {
+      if (item.name === e.target.name) {
+        item.isChecked = !item.isChecked;
+        props.filterHandler("brand", item.name, item.isChecked);
       }
-      return item
-    })
-    setCheckBoxStatus(newData)
-  }
-  console.log("rendered")
+      return item;
+    });
+    setCheckBoxStatus(newData);
+  };
+  // console.log("rendered")
   return (
     <>
       {" "}
@@ -53,15 +55,15 @@ function Brand(props) {
               <input type="text" className={classes["sidebar__associate__content__contentsection__content__input"]} placeholder="Search Brand" />
             </div>
             <div className={classes["sidebar__associate__content__contentsection"]}>
-              {!brand ? (
+              {!brand.length ? (
                 <div>Loading....</div>
               ) : (
                 brand?.map((igkey, index) => (
                   <div key={uuidv4()} className={classes["sidebar__associate__content__contentsection__content"]}>
                     <div className={classes["sidebar__associate__content__contentsection__content__brandsection"]}>
                       <label>
-                        <input name={igkey} className={classes["inputBox"]} checked={checkBoxStatus[index].isChecked} type="checkbox" onClick={changeHandler} />
-                        <div className={classes["divcheckbox"]} ></div>
+                        <input name={igkey} className={classes["inputBox"]} checked={checkBoxStatus[index].isChecked} type="checkbox" onChange={changeHandler} />
+                        <div className={classes["divcheckbox"]}></div>
                         <div className={classes["brand"]}>{igkey}</div>
                       </label>
                     </div>
@@ -83,7 +85,7 @@ const mapStateToProps = (state) => {
   return {
     data: state.data,
     isLoading: state.isLoading,
-    query: state.query
+    query: state.query,
   };
 };
 const mapDisptachToProps = (dispatch) => {

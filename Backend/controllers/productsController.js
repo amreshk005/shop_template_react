@@ -11,7 +11,7 @@ exports.getAllProducts = async (req, res) => {
     // if(req.params.tourId) filter = {tour: req.params.tour }
     const features = new APIFeatures(Product.find(), req.query).filter();
     const doc = await features.query;
-    console.log("doc", doc);
+    console.log("doc", doc.slice(1, 2));
     res.status(200).json({
       status: "success",
       results: doc.length,

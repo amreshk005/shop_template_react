@@ -4,7 +4,7 @@ import { FETCH_PRODUCT_LIST_REQUEST, FETCH_PRODUCT_LIST_SUCCESS, FETCH_PRODUCT_L
 const fetchPostRequest = (query) => {
   return {
     type: FETCH_PRODUCT_LIST_REQUEST,
-    query: query || ''
+    query: query || "",
   };
 };
 
@@ -22,8 +22,8 @@ const fetchPostFailure = (error) => {
   };
 };
 
-const fetchData = (query='') => {
-  console.log(query)
+const fetchData = (query = "") => {
+  // console.log(query)
   return async (dispatch) => {
     dispatch(fetchPostRequest(query));
     return await axios

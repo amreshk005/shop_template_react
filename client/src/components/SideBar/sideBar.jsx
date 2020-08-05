@@ -16,32 +16,91 @@ class SideBar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      query: [],
+      query: {
+        brand: [],
+        rating: [],
+        discount: [],
+      },
     };
   }
 
-  filterHandler = (getQuery,itemChecked) => {
-    let {query} = this.state
-    let newQuery 
-    if(itemChecked == true){
-      newQuery = [...query, getQuery]
+  filterHandler = (filterType, getQuery, itemChecked) => {
+    let queryState = this.state.query[filterType];
+    let newQuery;
+    if (itemChecked === true) {
+      newQuery = [...queryState, getQuery];
       this.setState({
-        query: newQuery
-      })
-    }else{
-      newQuery = query.filter(e => e !==  getQuery)
+        query: {
+          ...this.state.query,
+          [filterType]: newQuery,
+        },
+      });
+    } else {
+      newQuery = queryState.filter((e) => e !== getQuery);
       this.setState({
-        query: newQuery
-      })
+        query: {
+          ...this.state.query,
+          [filterType]: newQuery,
+        },
+      });
     }
-    let queryStr = ''
-    newQuery.forEach(item => {
-      queryStr = !queryStr.length?`brand=${item}`:`${queryStr}&brand=${item}`
-    })
-    console.log(queryStr)
-    this.props.fetchData(queryStr)
-  }
+
+    let queryStr = "";
+    switch (filterType) {
+      case "brand": {
+        let { rating, discount } = this.state.query;
+        newQuery.forEach((item) => {
+          queryStr = !queryStr.length ? `${filterType}=${item}` : `${queryStr}&${filterType}=${item}`;
+        });
+        if (rating.length !== 0) {
+          let minrating = Math.min(...rating);
+          queryStr = !queryStr.length ? `rating[gte]=${minrating}` : `${queryStr}&rating[gte]=${minrating}`;
+        }
+        if (discount.length !== 0) {
+          let mindiscount = Math.min(...discount);
+          queryStr = !queryStr.length ? `discount[gte]=${mindiscount}` : `${queryStr}&discount[gte]=${mindiscount}`;
+        }
+        break;
+      }
+      case "rating": {
+        let { brand, discount } = this.state.query;
+        if (newQuery.length !== 0) {
+          let minrating = Math.min(...newQuery);
+          newQuery && (queryStr = !queryStr.length ? `${filterType}[gte]=${minrating}` : `${queryStr}&${filterType}[gte]=${minrating}`);
+        }
+        if (discount.length !== 0) {
+          let mindiscount = Math.min(...discount);
+          queryStr = !queryStr.length ? `discount[gte]=${mindiscount}` : `${queryStr}&discount[gte]=${mindiscount}`;
+        }
+        brand.forEach((item) => {
+          queryStr = !queryStr.length ? `brand=${item}` : `${queryStr}&brand=${item}`;
+        });
+        break;
+      }
+      case "discount": {
+        let { brand, rating } = this.state.query;
+        if (newQuery.length !== 0) {
+          let minDicount = Math.min(...newQuery);
+          newQuery && (queryStr = !queryStr.length ? `${filterType}[gte]=${minDicount}` : `${queryStr}&${filterType}[gte]=${minDicount}`);
+        }
+        if (rating.length !== 0) {
+          let minrating = Math.min(...rating);
+          newQuery && (queryStr = !queryStr.length ? `${filterType}[gte]=${minrating}` : `${queryStr}&${filterType}[gte]=${minrating}`);
+        }
+        brand.forEach((item) => {
+          queryStr = !queryStr.length ? `brand=${item}` : `${queryStr}&brand=${item}`;
+        });
+      }
+      default:
+        break;
+    }
+    console.log(queryStr);
+    this.props.fetchData(queryStr);
+    this.props.history.push(`?${queryStr}`);
+  };
+
   render() {
+    console.log(this.state.query);
     return (
       <Aux>
         <div className={classes["sidebar"]}>
@@ -67,8 +126,8 @@ class SideBar extends Component {
                 </div>
               </div>
               <Brand filterHandler={this.filterHandler} />
-              <CoustmerRating />
-              <Discount />
+              <CoustmerRating filterHandler={this.filterHandler} />
+              <Discount filterHandler={this.filterHandler} />
               {/* <Size data={data} /> */}
               {/* <Compartment /> */}
               {/* <Material/> */}

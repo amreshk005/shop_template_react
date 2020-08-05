@@ -19,6 +19,7 @@ const productSchema = new mongoose.Schema({
   },
   OriginalPrice: {
     type: Number,
+    required: [true, "A product needed a Original price"],
   },
   PercentOff: {
     type: Number,
@@ -29,6 +30,9 @@ const productSchema = new mongoose.Schema({
     min: [1, "Rating must be above 1.0"],
     max: [5, "Rating mus be below 5.0"],
     set: (val) => Math.round(val * 10) / 10,
+  },
+  discount: {
+    type: Number,
   },
   ratingQuantity: {
     type: Number,
@@ -53,6 +57,12 @@ const productSchema = new mongoose.Schema({
     default: Date.now(),
     select: false,
   },
+});
+
+productSchema.pre("save", function (next) {
+  let perDicount = 100 - Math.floor((this.price / this.OriginalPrice) * 100);
+  this.discount = perDicount;
+  next();
 });
 
 const Product = mongoose.model("products", productSchema);
