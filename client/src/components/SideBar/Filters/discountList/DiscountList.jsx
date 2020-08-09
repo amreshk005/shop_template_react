@@ -29,7 +29,6 @@ function DiscountList(props) {
     });
     setCheckBoxStatus(newData);
   };
-  console.log(checkBoxStatus);
   return (
     <>
       <div className={classes["sidebar__associate__content"]}>

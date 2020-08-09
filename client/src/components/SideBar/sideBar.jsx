@@ -94,13 +94,12 @@ class SideBar extends Component {
       default:
         break;
     }
-    console.log(queryStr);
+    // console.log(queryStr);
     this.props.fetchData(queryStr);
     this.props.history.push(`?${queryStr}`);
   };
 
   render() {
-    console.log(this.state.query);
     return (
       <Aux>
         <div className={classes["sidebar"]}>

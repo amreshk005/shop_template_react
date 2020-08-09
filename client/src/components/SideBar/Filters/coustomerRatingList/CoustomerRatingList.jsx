@@ -28,7 +28,6 @@ function CoustomerRatingList(props) {
     });
     setCheckBoxStatus(newData);
   };
-  console.log(checkBoxStatus.length);
 
   return (
     <>

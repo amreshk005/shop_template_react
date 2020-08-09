@@ -23,13 +23,13 @@ const fetchPostFailure = (error) => {
 };
 
 const fetchData = (query = "") => {
-  // console.log(query)
+  console.log(query);
   return async (dispatch) => {
     dispatch(fetchPostRequest(query));
     return await axios
       .get(`http://localhost:8080/getAllProducts/?${query}`)
       .then((res) => {
-        // console.log(res.data);
+        console.log(res.data);
         return dispatch(fetchPostSuccess(res.data));
       })
       .catch((err) => dispatch(fetchPostFailure(err)));

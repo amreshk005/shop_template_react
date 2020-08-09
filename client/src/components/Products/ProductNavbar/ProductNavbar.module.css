@@ -72,6 +72,7 @@
   display: inline-block;
   font-size: 500;
   padding: 8px 10px 4px 0;
+  cursor: pointer;
 }
 .propertiessection__location {
   flex: 0 0 300px;

@@ -3,7 +3,17 @@ import { fetchData } from "../../../redux/action/action";
 import { connect } from "react-redux";
 import classes from "./ProductNavbar.module.css";
 
-function ProductNavbar() {
+function ProductNavbar(props) {
+  function clickHandler(e) {
+    let querStr = e.target.getAttribute("name");
+    console.log("in navavar", querStr);
+    if (querStr === "price_asc") {
+      querStr = "price";
+    } else if (querStr === "price_dsc") {
+      querStr = "-price";
+    }
+    props.fetchData(`sort=${querStr}`);
+  }
   return (
     <>
       <div className={classes["propertiessection"]}>
@@ -40,10 +50,18 @@ function ProductNavbar() {
             </span>
             <div className={classes["propertiessection__property__items__3"]}>
               <span className={classes["sortby"]}>Sort By</span>
-              <div className={classes["popularity"]}>Popularity</div>
-              <div className={classes["low_to_heigh"]}>Price -- Low to High</div>
-              <div className={classes["heigh_to_low"]}>Price -- High to Low</div>
-              <div className={classes["newest"]}>Newest First</div>
+              <div name="rating" className={classes["popularity"]} onClick={clickHandler}>
+                Popularity
+              </div>
+              <div name="price_asc" className={classes["low_to_heigh"]} onClick={clickHandler}>
+                Price -- Low to High
+              </div>
+              <div name="price_dsc" className={classes["heigh_to_low"]} onClick={clickHandler}>
+                Price -- High to Low
+              </div>
+              <div name="createdAt" className={classes["newest"]} onClick={clickHandler}>
+                Newest First
+              </div>
             </div>
           </div>
         </div>
