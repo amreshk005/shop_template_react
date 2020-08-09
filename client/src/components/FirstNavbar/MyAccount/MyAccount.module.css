@@ -4,10 +4,11 @@
   max-width: 150px;
 }
 .navbar-1__content__Accountsection__Account__myAccount {
-  font-weight: 500;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 20px;
+  font-weight: 600;
   letter-spacing: 0.1px;
   color: #fff;
   cursor: pointer;
+  font-family: Roboto, Arial, sans-serif !important;
 }

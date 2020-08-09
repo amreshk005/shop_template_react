@@ -1,10 +1,35 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import classes from "../Filters.module.css";
 import Svgicon from "../../../HelperComponent/svgIcon/downArrow/downArrow";
+import { v4 as uuidv4 } from "uuid";
+import { connect } from "react-redux";
+import { filterHelper } from "../../../HelperComponent/filter";
+import { fetchData } from "../../../../redux/action/action";
 
-export default function DiscountList() {
-  const [discount] = useState(["70% or more", "60% or more", "50% or more", "40% or more", "30% or more", "20% or more", "10% or more"]);
+function DiscountList(props) {
+  const [checkBoxStatus, setCheckBoxStatus] = useState([]);
+  const [discount] = useState([70, 60, 50, 40, 30, 20, 10]);
 
+  // const [brand, setBrand] = useState([]);
+
+  useEffect(() => {
+    discount.forEach((e) => {
+      setCheckBoxStatus((result) => [...result, { name: e, isChecked: false }]);
+    });
+  }, []);
+
+  const changeHandler = (e) => {
+    // console.log("hello", e.target.name, e.target.checked, checkBoxStatus);
+    let newData = checkBoxStatus.map((item, index) => {
+      if (String(item.name) === e.target.name) {
+        item.isChecked = !item.isChecked;
+        props.filterHandler("discount", item.name, item.isChecked);
+      }
+      return item;
+    });
+    setCheckBoxStatus(newData);
+  };
+  console.log(checkBoxStatus);
   return (
     <>
       <div className={classes["sidebar__associate__content"]}>
@@ -13,23 +38,39 @@ export default function DiscountList() {
           <Svgicon />
         </div>
         <div className={classes["sidebar__associate__content__contentsection"]}>
-          <div className={classes["sidebar__associate__content__contentsection__content"]}>
-            {discount?.map((igkey) => {
+          {!checkBoxStatus.length ? (
+            <div>Loading....</div>
+          ) : (
+            discount.map((igkey, index) => {
               return (
-                <div className={classes["sidebar__associate__content__contentsection__content"]}>
+                <div key={uuidv4()} className={classes["sidebar__associate__content__contentsection__content"]}>
                   <div className={classes["sidebar__associate__content__contentsection__content__brandsection"]}>
                     <label>
-                      <input className={classes["inputBox"]} type="checkbox" name="" readonly value="on" />
+                      <input name={igkey} className={classes["inputBox"]} type="checkbox" checked={checkBoxStatus[index].isChecked} onChange={changeHandler} />
                       <div className={classes["divcheckbox"]}></div>
-                      <div className={classes["brand"]}>{igkey}</div>
+                      <div className={classes["brand"]}>{igkey}% or more</div>
                     </label>
                   </div>
                 </div>
               );
-            })}
-          </div>
+            })
+          )}
         </div>
       </div>
     </>
   );
 }
+
+const mapStateToProps = (state) => {
+  return {
+    data: state.data,
+    isLoading: state.isLoading,
+  };
+};
+const mapDisptachToProps = (dispatch) => {
+  return {
+    fetchData: (payload) => dispatch(fetchData(payload)),
+  };
+};
+
+export default connect(mapStateToProps, mapDisptachToProps)(DiscountList);

@@ -1,0 +1,133 @@
+.main {
+  flex-grow: 1;
+  overflow: auto;
+  flex-flow: column;
+  display: flex;
+  padding: 10px;
+  overflow: hidden;
+}
+.main .propertiessection {
+  align-items: center;
+  display: flex;
+  flex-flow: row;
+  width: 100%;
+  background: #fff;
+}
+.main .propertiessection__property {
+  flex-grow: 1;
+  overflow: auto;
+}
+.main .propertiessection__property__items {
+  background: #fff;
+  padding: 12px 16px 0;
+  border-bottom: 1px solid #f0f0f0;
+  height: 100%;
+  min-height: 72px;
+}
+.main .propertiessection__property__items__1 {
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: row;
+}
+.main .propertiessection__property__items__1__Home .home {
+  max-width: 80px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  vertical-align: middle;
+  text-decoration: none;
+  color: #878787;
+  font-size: 14px;
+  padding-left: 10px;
+}
+.main .propertiessection__property__items__1__BagsWallet .Bags_Back {
+  max-width: 80px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  vertical-align: middle;
+  text-decoration: none;
+  color: #878787;
+  font-size: 14px;
+  padding-left: 10px;
+}
+.main .propertiessection__property__items__1__Bags .Bags {
+  max-width: 80px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  vertical-align: middle;
+  text-decoration: none;
+  color: #878787;
+  font-size: 14px;
+  padding-left: 10px;
+}
+.main .propertiessection__property__items__2 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 8px;
+  display: inline-block;
+}
+.main .propertiessection__property__items__3 {
+  display: flex;
+  align-content: center;
+}
+.main .propertiessection__property__items__3 > * {
+  border-bottom: 2px solid transparent;
+  display: inline-block;
+  font-size: 500;
+  padding: 8px 10px 4px 0;
+}
+.main .propertiessection__location {
+  flex: 0 0 300px;
+  max-width: 275px;
+  background: #fff;
+  border-bottom: 1px solid #f0f0f0;
+  position: relative;
+  padding: 28px 10px 0 0;
+}
+.main .propertiessection__location__delivery {
+  color: #878787;
+  font-weight: 500;
+  font-size: 12px;
+}
+.main .propertiessection__location__input {
+  z-index: 4;
+  position: relative;
+  border-radius: 2px;
+  padding: 0 0 4px;
+  border: none;
+  border-bottom: 2px solid #2874f0;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+.main .propertiessection__location__input svg {
+  vertical-align: middle;
+  margin-right: 6px;
+  fill: #2874f0;
+}
+.main .propertiessection__location__input__form {
+  display: inline-block;
+  line-height: 25px;
+}
+.main .propertiessection__location__input__form input {
+  font-weight: 500;
+  font-size: 14px;
+  border: none;
+  outline: none;
+  padding: 6px;
+  vertical-align: middle;
+  width: 110px !important;
+}
+.main .propertiessection__location__input__change {
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 14px;
+  color: #2874f0;
+  margin-left: auto;
+  position: relative;
+}

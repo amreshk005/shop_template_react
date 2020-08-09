@@ -68,7 +68,7 @@ const priceMap = (props) => {
         <div className={classes["sidebar__associate__content__3__limit"]}>
           <div className={classes["sidebar__associate__content__3__limit__box1"]}>
             <select className={classes["sidebar__associate__content__3__limit__box1__min"]}>
-              <option selected value="Min" className={classes["option"]}>
+              <option value="Min" className={classes["option"]}>
                 Min
               </option>
               <option value="500" className={classes["option"]}>
@@ -85,7 +85,7 @@ const priceMap = (props) => {
           <div className={classes["sidebar__associate__content__3__limit__to"]}>to</div>
           <div className={classes["sidebar__associate__content__3__limit__box2"]}>
             <select className={classes["sidebar__associate__content__3__limit__box2__min"]}>
-              <option selected defaultValue="Min" className={classes["option"]}>
+              <option value="Min" className={classes["option"]}>
                 Max
               </option>
               <option value="500" className={classes["option"]}>

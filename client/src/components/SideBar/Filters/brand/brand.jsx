@@ -1,20 +1,47 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { connect } from "react-redux";
 import Svgicon from "../../../HelperComponent/svgIcon/downArrow/downArrow";
 import classes from "../Filters.module.css";
+import { fetchData } from "../../../../redux/action/action";
+import { v4 as uuidv4 } from "uuid";
+import { filterHelper } from "../../../HelperComponent/filter";
 
-export default function Brand() {
-  const [brand] = useState(["Skybags", "American Tourister", "Puma", "Theskinmantra", "LeeRooy", "ACM"]);
+function Brand(props) {
+  const [checkBoxStatus, setCheckBoxStatus] = useState([]);
+  const [brand, setBrand] = useState([]);
 
+  useEffect(() => {
+    props
+      .fetchData()
+      .then((res) => {
+        let { data } = res.data;
+        let arr = filterHelper(data, "brand");
+        arr.forEach((e, index) => {
+          setCheckBoxStatus((result) => [...result, { name: e, isChecked: false }]);
+        });
+        setBrand(arr);
+      })
+      .catch((err) => console.log(err));
+  }, []);
+
+  const changeHandler = (e) => {
+    // console.log("hello", e.target.name, e.target.checked, checkBoxStatus);
+    let newData = checkBoxStatus.map((item, index) => {
+      if (item.name === e.target.name) {
+        item.isChecked = !item.isChecked;
+        props.filterHandler("brand", item.name, item.isChecked);
+      }
+      return item;
+    });
+    setCheckBoxStatus(newData);
+  };
+  // console.log("rendered")
   return (
     <>
       {" "}
       <div className={classes["sidebar__associate__content"]}>
         <div className={classes["sidebar__associate__content__titlesection"]}>
           <div className={classes["sidebar__associate__content__titlesection__title"]}>Brand</div>
-          {/* <svg className={classes["icon icon-cheveron-up"]} width="16" height="27" viewBox="0 0 16 27">
-            <use xlinkHref="#icon-cheveron-up"></use>
-            <path d="M10.707 7.050l-0.707-0.707-5.657 5.657 1.414 1.414 4.243-4.242 4=.243 4.242 1.414-1.414z"></path>
-          </svg> */}
           <Svgicon />
         </div>
         <div className={classes["sidebar__associate__content__contentsection"]}>
@@ -27,24 +54,45 @@ export default function Brand() {
 
               <input type="text" className={classes["sidebar__associate__content__contentsection__content__input"]} placeholder="Search Brand" />
             </div>
-            {brand?.map((igkey) => (
-              <div className={classes["sidebar__associate__content__contentsection__content"]}>
-                {/* <div className={classes[`sidebar__associate__content__contentsection__content__${brand.indexOf(igkey) + 2}__brandsection`]}> */}
-                <div className={classes["sidebar__associate__content__contentsection__content__brandsection"]}>
-                  <label>
-                    <input className={classes["inputBox"]} type="checkbox" name="" readonly value="on" />
-                    <div className={classes["divcheckbox"]}></div>
-                    <div className={classes["brand"]}>{igkey}</div>
-                  </label>
-                </div>
-              </div>
-            ))}
+            <div className={classes["sidebar__associate__content__contentsection"]}>
+              {!brand.length ? (
+                <div>Loading....</div>
+              ) : (
+                brand?.map((igkey, index) => (
+                  <div key={uuidv4()} className={classes["sidebar__associate__content__contentsection__content"]}>
+                    <div className={classes["sidebar__associate__content__contentsection__content__brandsection"]}>
+                      <label>
+                        <input name={igkey} className={classes["inputBox"]} checked={checkBoxStatus[index].isChecked} type="checkbox" onChange={changeHandler} />
+                        <div className={classes["divcheckbox"]}></div>
+                        <div className={classes["brand"]}>{igkey}</div>
+                      </label>
+                    </div>
+                  </div>
+                ))
+              )}
+            </div>
           </div>
-          <div className={classes["sidebar__associate__content__contentsection__more"]}>
+          {/* <div className={classes["sidebar__associate__content__contentsection__more"]}>
             <span>1790 More</span>
-          </div>
+          </div> */}
         </div>
       </div>
     </>
   );
 }
+
+const mapStateToProps = (state) => {
+  return {
+    data: state.data,
+    isLoading: state.isLoading,
+    query: state.query,
+  };
+};
+const mapDisptachToProps = (dispatch) => {
+  return {
+    fetchData: (payload) => dispatch(fetchData(payload)),
+  };
+};
+
+export default connect(mapStateToProps, mapDisptachToProps)(Brand);
+// export default Brand;

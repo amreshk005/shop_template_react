@@ -16,6 +16,7 @@
   width: 100%;
   display: flex;
   align-items: center;
+  justify-content: space-around;
 }
 .navbar-1__margin1 {
   height: 100%;

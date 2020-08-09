@@ -8,8 +8,12 @@ const router = express.Router();
 //   res.send("it's working");
 // });
 
-router.route("/addProduct").post(authController.protect, productController.createOne);
+// router.route("/addProduct").post(authController.protect, productController.createOne);
+router.route("/addProduct").post(productController.createOne);
+
 router.route("/getAllProducts").get(productController.getAllProducts);
+// router.route("/getAllProducts/?filter")
+
 router.route("/getProduct/:id").get(productController.getProduct);
 
 module.exports = router;

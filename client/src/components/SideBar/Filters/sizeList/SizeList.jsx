@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Svgicon from "../../../HelperComponent/svgIcon/downArrow/downArrow";
+import { v4 as uuidv4 } from "uuid";
 
 import classes from "../Filters.module.css";
 
@@ -22,20 +23,21 @@ export default function SizeList() {
               </svg>
               <input type="text" className={classes["sidebar__associate__content__contentsection__content__input"]} placeholder="Search Size" />
             </div>
-            {size?.map((igkey) => {
-              return (
-                <div className={classes["sidebar__associate__content__contentsection__content"]}>
-                  <div className={classes["sidebar__associate__content__contentsection__content__brandsection"]}>
-                    <label>
-                      <input className={classes["inputBox"]} type="checkbox" name="" readonly value="on" />
-                      <div className={classes["divcheckbox"]}></div>
-                      <div className={classes["brand"]}>{igkey}</div>
-                    </label>
+            <div className={classes["sidebar__associate__content__contentsection"]}>
+              {size?.map((igkey) => {
+                return (
+                  <div key={uuidv4()} className={classes["sidebar__associate__content__contentsection__content"]}>
+                    <div className={classes["sidebar__associate__content__contentsection__content__brandsection"]}>
+                      <label>
+                        <input className={classes["inputBox"]} type="checkbox" name="" readOnly value="on" />
+                        <div className={classes["divcheckbox"]}></div>
+                        <div className={classes["brand"]}>{igkey}</div>
+                      </label>
+                    </div>
                   </div>
-                </div>
-              );
-            })}
-
+                );
+              })}
+            </div>
             <div className={classes["sidebar__associate__content__contentsection__more"]}>
               <span>126 More</span>
             </div>
