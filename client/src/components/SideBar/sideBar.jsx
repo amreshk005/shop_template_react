@@ -10,7 +10,7 @@ import CoustmerRating from "./Filters/coustomerRatingList/CoustomerRatingList";
 import Discount from "./Filters/discountList/DiscountList";
 // import Size from "./Filters/sizeList/SizeList";
 // import Offer from "./Filters/offerList/OfferList";
-import { fetchData } from "../../redux/action/action";
+import { fetchData } from "../../redux/action/products";
 
 class SideBar extends Component {
   constructor(props) {
@@ -143,7 +143,7 @@ class SideBar extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    data: state.data,
+    data: state.products.data,
   };
 };
 const mapDisptachToProps = (dispatch) => {

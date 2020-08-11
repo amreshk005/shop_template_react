@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import Svgicon from "../../../HelperComponent/svgIcon/downArrow/downArrow";
 import classes from "../Filters.module.css";
-import { fetchData } from "../../../../redux/action/action";
+import { fetchData } from "../../../../redux/action/products";
 import { v4 as uuidv4 } from "uuid";
 import { filterHelper } from "../../../HelperComponent/filter";
 
@@ -83,9 +83,9 @@ function Brand(props) {
 
 const mapStateToProps = (state) => {
   return {
-    data: state.data,
-    isLoading: state.isLoading,
-    query: state.query,
+    data: state.products.data,
+    isLoading: state.products.isLoading,
+    query: state.products.query,
   };
 };
 const mapDisptachToProps = (dispatch) => {

@@ -1,4 +1,4 @@
-import * as actionTypes from "./actionTypes";
+import * as actionTypes from "../actionTypes/actionTypes";
 import cookie from "js-cookie";
 import axios from "axios";
 
@@ -25,7 +25,7 @@ export const authFail = (error) => {
   };
 };
 
-export const auth = (getAuthInput) => {
+export const fetchAuth = (getAuthInput) => {
   console.log("in auth");
   return (dispatch) => {
     dispatch(authStart());

@@ -3,8 +3,7 @@ import classes from "../Filters.module.css";
 import Svgicon from "../../../HelperComponent/svgIcon/downArrow/downArrow";
 import { v4 as uuidv4 } from "uuid";
 import { connect } from "react-redux";
-import { filterHelper } from "../../../HelperComponent/filter";
-import { fetchData } from "../../../../redux/action/action";
+import { fetchData } from "../../../../redux/action/products";
 
 function DiscountList(props) {
   const [checkBoxStatus, setCheckBoxStatus] = useState([]);
@@ -62,8 +61,8 @@ function DiscountList(props) {
 
 const mapStateToProps = (state) => {
   return {
-    data: state.data,
-    isLoading: state.isLoading,
+    data: state.products.data,
+    isLoading: state.products.isLoading,
   };
 };
 const mapDisptachToProps = (dispatch) => {

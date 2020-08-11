@@ -1,3 +1,7 @@
+.modal_dialog_coustom {
+  max-width: 100%;
+  pointer-events: auto;
+}
 .modal_container_section {
   display: flex;
   justify-content: space-between;
@@ -10,6 +14,7 @@
   max-width: 90%;
   min-height: 200px;
   max-height: 90vh;
+  border-radius: 4px;
   display: flex;
   overflow: auto;
 }
@@ -21,7 +26,6 @@
   height: 528px;
   max-width: 700px;
   min-width: 650px;
-  border-radius: 4px;
   background-color: #2874f0;
 }
 .modal_info {
@@ -93,5 +97,13 @@
 
 .modal_close button {
   font-size: 32px;
+  color: #fff !important;
+}
+
+.modal_close button:focus {
+  outline: none;
+}
+
+.modal_close button:hover {
   color: #fff;
 }

@@ -4,7 +4,7 @@ import { faShoppingCart, faHeart } from "@fortawesome/free-solid-svg-icons";
 import { connect } from "react-redux";
 import { v4 as uuidv4 } from "uuid";
 import classes from "./ProductsRow.module.css";
-import { fetchData } from "../../../redux/action/action";
+import { fetchData } from "../../../redux/action/products";
 
 function ProductsRow(props) {
   useEffect(() => {
@@ -65,8 +65,8 @@ function ProductsRow(props) {
 
 const mapStateToProps = (state) => {
   return {
-    data: state.data,
-    isLoading: state.isLoading
+    data: state.products.data,
+    isLoading: state.products.isLoading,
   };
 };
 const mapDisptachToProps = (dispatch) => {

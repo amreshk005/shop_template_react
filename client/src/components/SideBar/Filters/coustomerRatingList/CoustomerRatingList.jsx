@@ -4,7 +4,7 @@ import Svgicon from "../../../HelperComponent/svgIcon/downArrow/downArrow";
 import { v4 as uuidv4 } from "uuid";
 import { connect } from "react-redux";
 import { filterHelper } from "../../../HelperComponent/filter";
-import { fetchData } from "../../../../redux/action/action";
+import { fetchData } from "../../../../redux/action/products";
 
 function CoustomerRatingList(props) {
   const [checkBoxStatus, setCheckBoxStatus] = useState([]);

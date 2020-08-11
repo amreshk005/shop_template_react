@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { fetchData } from "../../../redux/action/action";
+import { fetchData } from "../../../redux/action/products";
 import { connect } from "react-redux";
 import classes from "./ProductNavbar.module.css";
 

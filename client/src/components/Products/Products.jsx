@@ -1,15 +1,18 @@
-import React, { useEffect } from "react";
+import React from "react";
 import classes from "./Products.module.css";
-// import Aux from "../../hoc/Aux";
 import ProductNavbar from "./ProductNavbar/ProductNavbar";
 import ProductsRow from "./ProductsRow/ProductsRow";
+import SideBar from "../SideBar/sideBar";
 
-function Product() {
+function Product(props) {
   return (
-    <div className={classes["main"]}>
-      <ProductNavbar />
-      <ProductsRow />
-    </div>
+    <>
+      <SideBar history={props.history} />
+      <div className={classes["main"]}>
+        <ProductNavbar />
+        <ProductsRow />
+      </div>
+    </>
   );
 }
 
