@@ -1,6 +1,5 @@
 import React from "react";
 import classes from "./MyAccount.module.css";
-import Modal from "./Modal/Modal";
 import Login from "../../Login/Login";
 
 const MyAccount = (props) => (
@@ -20,9 +19,9 @@ const MyAccount = (props) => (
           </span>
         </div>
       </div>
-      <div className="modal fade" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      {/* <div className="modal fade" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <Login />
-      </div>
+      </div> */}
     </div>
   </>
 );

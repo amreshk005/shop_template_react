@@ -8,10 +8,6 @@ const initialState = {
   authRedirectPath: "/",
 };
 
-const authStart = (state, action) => {
-  return;
-};
-
 const auth = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.AUTH_START:

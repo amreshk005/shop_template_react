@@ -1,29 +1,29 @@
 import axios from "axios";
-import { FETCH_PRODUCT_LIST_REQUEST, FETCH_PRODUCT_LIST_SUCCESS, FETCH_PRODUCT_LIST_FAILURE } from "../actionTypes/actionTypes";
+import { FETCH_PRODUCT_REQUEST, FETCH_PRODUCT_SUCCESS, FETCH_PRODUCT_FAILURE } from "../actionTypes/actionTypes";
 
 const fetchGetRequest = (query) => {
   return {
-    type: FETCH_PRODUCT_LIST_REQUEST,
+    type: FETCH_PRODUCT_REQUEST,
     query: query || "",
   };
 };
 
 const fetchGetSuccess = (data) => {
   return {
-    type: FETCH_PRODUCT_LIST_SUCCESS,
+    type: FETCH_PRODUCT_SUCCESS,
     data: data,
   };
 };
 
 const fetchGetFailure = (error) => {
   return {
-    type: FETCH_PRODUCT_LIST_FAILURE,
+    type: FETCH_PRODUCT_FAILURE,
     error: error,
   };
 };
 
 const fetchData = (query = "") => {
-  let url = `http://localhost:8080/getAllProducts/${query}`;
+  let url = `http://localhost:8080/getProduct/${query}`;
   console.log(url);
   return async (dispatch) => {
     dispatch(fetchGetRequest(query));

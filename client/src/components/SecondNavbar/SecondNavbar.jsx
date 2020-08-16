@@ -8,7 +8,7 @@ export default class SecondNavbar extends Component {
   render() {
     return (
       <Aux>
-        <div className={classes["navbar-2"]}>
+        <div className={classes["navbar-2"] + " shadow-sm"}>
           <ul className={classes["navbar-2__menu"]}>
             <li className={classes["navbar-2__menu__1"]}>
               <span className={classes["navbar-2__menu__1__svg"]}>

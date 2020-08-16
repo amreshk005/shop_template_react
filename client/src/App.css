@@ -15,6 +15,17 @@
   display: flex;
 }
 
+a:link,
+a:visited {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button:visited,
+button:focus {
+  text-decoration: none;
+  cursor: pointer;
+}
 .recommend {
   height: 10vh;
   width: 100vw;

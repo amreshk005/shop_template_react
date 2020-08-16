@@ -4,16 +4,17 @@ import ProductNavbar from "./ProductNavbar/ProductNavbar";
 import ProductsRow from "./ProductsRow/ProductsRow";
 import SideBar from "../SideBar/sideBar";
 
-function Product(props) {
+function Products(props) {
+  // console.log(props);
   return (
     <>
-      <SideBar history={props.history} />
+      <SideBar />
       <div className={classes["main"]}>
-        <ProductNavbar />
-        <ProductsRow />
+        <ProductNavbar {...props} />
+        <ProductsRow {...props} />
       </div>
     </>
   );
 }
 
-export default Product;
+export default Products;

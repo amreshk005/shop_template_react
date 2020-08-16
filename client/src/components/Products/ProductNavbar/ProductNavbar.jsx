@@ -5,14 +5,15 @@ import classes from "./ProductNavbar.module.css";
 
 function ProductNavbar(props) {
   function clickHandler(e) {
-    let querStr = e.target.getAttribute("name");
-    console.log("in navavar", querStr);
-    if (querStr === "price_asc") {
-      querStr = "price";
-    } else if (querStr === "price_dsc") {
-      querStr = "-price";
+    let queryStr = e.target.getAttribute("name");
+    console.log("in navavar", queryStr);
+    if (queryStr === "price_asc") {
+      queryStr = "price";
+    } else if (queryStr === "price_dsc") {
+      queryStr = "-price";
     }
-    props.fetchData(`sort=${querStr}`);
+    props.fetchData(`?sort=${queryStr}`);
+    props.history.push(`?sort=${queryStr}`);
   }
   return (
     <>
@@ -85,7 +86,7 @@ function ProductNavbar(props) {
 
 const mapStateToProps = (state) => {
   return {
-    data: state.data,
+    data: state.products.data,
   };
 };
 const mapDisptachToProps = (dispatch) => {

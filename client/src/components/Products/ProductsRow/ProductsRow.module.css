@@ -10,15 +10,14 @@
 .itemsrow__row__items {
   display: flex;
   flex-wrap: wrap;
-  /* justify-content: space-around; */
-  /* flex-flow: row; */
+
   width: 100%;
   margin-top: 15px;
 }
 .itemsrow__row__items__item {
   display: flex;
   flex-flow: column;
-  width: 24%;
+  width: 100%;
   height: 100%;
   margin: 5px 0 0px 7px;
   transition: all ease-in-out;

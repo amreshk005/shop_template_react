@@ -1,5 +1,4 @@
 import * as actionTypes from "../actionTypes/actionTypes";
-import cookie from "js-cookie";
 import axios from "axios";
 
 axios.defaults.withCredentials = true;
@@ -46,7 +45,7 @@ export const fetchAuth = (getAuthInput) => {
         let { user } = res.data.data;
         localStorage.setItem("token", res.data.token);
         localStorage.setItem("name", user.name);
-        console.log(cookie.get("jwt"));
+        // console.log(cookie.get("jwt"));
         dispatch(authSuccess(res.token, user.name));
       })
       .catch((err) => {

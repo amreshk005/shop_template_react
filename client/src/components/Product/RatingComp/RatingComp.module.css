@@ -1,0 +1,27 @@
+.product_rating_section {
+  margin: 6px 0 6px 0;
+  font-size: 16px;
+}
+
+.product_rating {
+  padding: 2px 7px;
+  border-radius: 14px;
+  font-size: 16px;
+  background-color: #26a541;
+  vertical-align: middle;
+  font-weight: 600;
+  display: inline-block;
+  color: #fff;
+}
+
+.product_star {
+  vertical-align: baseline;
+  margin: 2px 0 0 2px;
+  height: 12px;
+}
+
+.product_reviews {
+  padding-left: 8px;
+  font-weight: 600;
+  color: #878787;
+}

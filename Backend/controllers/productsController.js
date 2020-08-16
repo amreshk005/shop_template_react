@@ -38,23 +38,16 @@ exports.createOne = async (req, res, next) => {
   }
 };
 
-exports.getProduct = async (req, res) => {
-  try {
-    // let filter = {};
-    // if (req.params.productId) filter = { product: req.params.productId };
-    const foundProduct = await Product.findById(req.params.id);
-    // const features = new APIFeatures(Model.find(filter), req.query).filter().sort().paginate()
+exports.getProduct = catchAsync(async (req, res) => {
+  // let filter = {};
+  // if (req.params.productId) filter = { product: req.params.productId };
+  const foundProduct = await Product.findById(req.params.id);
+  // const features = new APIFeatures(Model.find(filter), req.query).filter().sort().paginate()
 
-    res.status(200).json({
-      status: "success",
-      data: {
-        foundProduct,
-      },
-    });
-  } catch (err) {
-    res.status(400).json({
-      status: "fail",
-      message: err,
-    });
-  }
-};
+  res.status(200).json({
+    status: "success",
+    data: {
+      foundProduct,
+    },
+  });
+});

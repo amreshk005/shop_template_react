@@ -95,7 +95,7 @@ class SideBar extends Component {
         break;
     }
     // console.log(queryStr);
-    this.props.fetchData(queryStr);
+    this.props.fetchData(`?${queryStr}`);
     this.props.history.push(`?${queryStr}`);
   };
 
