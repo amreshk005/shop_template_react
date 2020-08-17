@@ -36,7 +36,7 @@ export const fetchAuth = (getAuthInput) => {
     console.log(authData);
     let url = "";
     if (!getAuthInput.isSignup) {
-      url = "http://localhost:8080/api/users/login";
+      url = "https://mighty-castle-96883.herokuapp.com/api/users/login";
     }
     axios
       .post(url, authData)

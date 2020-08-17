@@ -23,7 +23,7 @@ const fetchGetFailure = (error) => {
 };
 
 const fetchData = (query = "") => {
-  let url = `http://localhost:8080/getAllProducts/${query}`;
+  let url = `https://mighty-castle-96883.herokuapp.com/getAllProducts/${query}`;
   console.log(url);
   return async (dispatch) => {
     dispatch(fetchGetRequest(query));
