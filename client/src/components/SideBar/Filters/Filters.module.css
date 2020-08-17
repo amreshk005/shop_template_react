@@ -1,0 +1,147 @@
+.sidebar__associate__content {
+  width: 100%;
+  padding: 10px 0px 25px 10px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sidebar__associate__content__titlesection {
+  width: 90%;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  margin: -16px;
+  padding: 16px;
+}
+
+.sidebar__associate__content__titlesection__title {
+  padding-bottom: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  display: inline-block;
+  width: 95%;
+  cursor: pointer;
+}
+
+.sidebar__associate__content__titlesection .icon {
+  display: inline-block;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+.sidebar__associate__content__contentsection {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-top: 7px;
+}
+.sidebar__associate__content__contentsection__content {
+  margin: 18px 0;
+  box-sizing: content-box;
+  /* padding-top: 20px; */
+  /* margin-bottom: 20px; */
+  position: relative;
+}
+.sidebar__associate__content__contentsection__content_inputsection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar__associate__content__contentsection__content__input {
+  width: 90%;
+  border-width: 0 0 2px;
+  border-color: #e0e0e0;
+  height: 20px;
+  font-size: 14px;
+  color: red;
+  outline: none;
+}
+
+.sidebar__associate__content__contentsection__content .icon {
+  position: absolute;
+  z-index: 1;
+}
+
+.sidebar__associate__content__contentsection__content__brandsection {
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.sidebar__associate__content__contentsection__content__brandsection label {
+  display: flex;
+  position: absolute;
+}
+
+.sidebar__associate__content__contentsection__content__brandsection label .inputBox {
+  display: inline-block;
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  vertical-align: top !important;
+  cursor: pointer;
+}
+
+.sidebar__associate__content__contentsection__content__brandsection label .divcheckbox {
+  position: relative;
+  width: 14px;
+  height: 14px;
+  background-color: transparent;
+  border: 1.4px solid #c2c2c2;
+  border-radius: 1.5px;
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.sidebar__associate__content__contentsection__content__brandsection label .divcheckbox:before {
+  position: absolute;
+  content: "";
+  left: 5px;
+  top: 2px;
+  width: 4px;
+  height: 8px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  backface-visibility: hidden;
+  cursor: pointer;
+}
+
+.sidebar__associate__content__contentsection__content__brandsection label .inputBox[type="checkbox"]:checked + .divcheckbox {
+  background: #2874f0;
+  border: 1.4px solid #2874f0;
+}
+
+.sidebar__associate__content__contentsection__content__brandsection label .brand {
+  padding-left: 0 10px;
+  font-size: 16px;
+  padding-left: 11px;
+  display: inline-block;
+  width: calc(100%-25px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1;
+  cursor: pointer;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.sidebar__associate__content__contentsection__more {
+  font-size: 14px;
+  font-weight: 700;
+  color: #2874f0;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-top: 9px;
+  padding: 30px 0px 0px 0px;
+}
